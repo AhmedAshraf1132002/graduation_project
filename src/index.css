@@ -1,0 +1,414 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #242424; */
+}
+body {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+}
+.layer {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/*============Navbar==========*/
+.navbar {
+  background-color: #1e84a9;
+  border-radius: 20px;
+}
+.navbar .left-nav {
+  width: 66px;
+  height: 65px;
+}
+.navbar span {
+  font-size: 15px;
+  font-family: "Charm", cursive;
+}
+.navbar .left-nav img {
+  border-radius: 50%;
+}
+.navbar ul li .active {
+  background-color: white;
+  padding: 5px 25px;
+  border-radius: 30px;
+}
+.navbar ul li {
+  margin: 0 20px;
+  font-size: 18px;
+}
+.navbar .right-nav .fa-magnifying-glass {
+  color: gray;
+  font-weight: bold;
+}
+.navbar .center-nav ul li {
+  font-family: "Arima", system-ui;
+}
+.navbar .right-nav ul li .english {
+  background-color: #76bed8;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+.navbar .right-nav ul li .qrCode {
+  background-color: #b16a05;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+.navbar .right-nav ul li .Members {
+  background-color: #9c3d3d;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+/*============Home==========*/
+.Home {
+  background-image: url(assets/Images/home.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  position: relative;
+}
+.Home .Caption {
+  position: relative;
+  z-index: 9999;
+  text-align: center;
+}
+.Home .Caption .homePhoto {
+  width: 280px;
+  height: 272px;
+  margin: auto;
+}
+.Home .Caption .homePhoto img {
+  border-radius: 50%;
+}
+.Home .Caption .meta {
+  font-size: 60px;
+  font-family: "Charm", cursive;
+}
+.Home .Caption .title {
+  font-size: 70px;
+  font-family: "Ceviche One", system-ui;
+}
+.Home .Caption .btn {
+  background-color: #76bed8;
+  border-radius: 40px;
+  padding: 10px 50px;
+  font-size: 50px;
+  color: #b16a05;
+  font-weight: bolder;
+  font-family: "Ceviche One", system-ui;
+}
+
+/*============About==========*/
+.about {
+  background-color: #000;
+}
+.about h2 {
+  color: #b16a05;
+  font-size: 80px;
+  font-family: "Italianno", cursive;
+}
+.about .aboutLeft h3 {
+  font-size: 60px;
+  color: #76bed8;
+  margin: auto;
+  width: fit-content;
+  position: relative;
+  font-family: "Italianno", cursive;
+}
+.about .aboutLeft h3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 100%;
+  left: 0;
+  background-color: #76bed8;
+  margin-top: 20px;
+}
+.about .aboutLeft .paragraphs {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 50px;
+  font-family: "Inria Serif", serif;
+}
+.about .aboutRight {
+  width: 582px;
+  height: 450px;
+  border-radius: 20px;
+}
+.about .aboutRight img {
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
+/*============OurGyms==========*/
+.ourGym {
+  background-image: url(assets/Images/OurGym.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: auto;
+}
+.ourGym .container {
+  position: relative;
+  z-index: 9999999;
+}
+.ourGym .content {
+  border-radius: 20px;
+}
+.ourGym .content .topContent img {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.ourGym .content .bottomContnent {
+  background-color: #3b3f47;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/*============Practise==========*/
+.practise .title {
+  font-size: 80px;
+  background-color: #9c3d3d;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  font-family: "Italianno", cursive;
+}
+.practise .practise_content .image {
+  width: 500px;
+}
+.practise .practise_content .image img {
+  border-radius: 20px;
+}
+.practise .practise_content .btn {
+  background-color: #1e84a9;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-size: 70px;
+  color: #fff;
+  font-family: "Ceviche One", system-ui;
+}
+.practise .two {
+  height: 310px;
+}
+.practise .practise_content .genderTwo {
+  padding: 10px 50px;
+}
+
+/* .seconSection .aboutPractise .practiseImage{
+width: 263px;
+height: 213px;
+} */
+/* .seconSection .aboutPractise .practiseImage img{
+  border-radius: 20px;
+} */
+
+.thirdSection .thirdContent .Img {
+  width: 350px;
+}
+.thirdSection .thirdContent p {
+  width: 246px;
+}
+
+/*===========================Contact======================*/
+.contact {
+  background-image: url(assets/Images/Contact.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+}
+.contact .container {
+  background-color: #b3b3b3;
+  border-radius: 20px;
+  width: 40%;
+  z-index: 999999;
+  position: relative;
+}
+.contact .contactTitle h2 {
+  font-size: 80px;
+}
+.contact .contactTitle {
+  background-color: #9c3d3d;
+  width: fit-content;
+  padding: 7px 40px;
+  border-radius: 30px;
+  margin: auto;
+  z-index: 999999;
+  position: relative;
+  font-family: "Italianno", cursive;
+}
+
+/*===========================signUp======================*/
+
+.signUp {
+  background-image: url(assets/Images/gym.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+}
+.signUp span {
+  font-family: "Charm", cursive;
+}
+.signUp .signUpLogo {
+  width: 135px;
+  height: 133px;
+}
+.signUp .signUpLogo img {
+  border-radius: 50%;
+}
+.signUp .signUpContent .formGroup {
+  width: 336px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.signUp .signUpContent form .formGroup input {
+  background-color: rgb(128, 128, 128);
+  border: none;
+}
+.signUp .signUpContent form .formGroup label {
+  font-size: 15px;
+}
+.signUp .signUpContent form .secondFormGroup button {
+  padding: 7px 50px;
+  font-size: 15px;
+  background-color: rgb(128, 128, 128);
+  border-radius: 5px;
+  color: #fff;
+}
+.signUp .signUpContent form .secondFormGroup {
+  width: 70%;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.signUp .signUpContent form .secondFormGroup input {
+  width: 131px;
+}
+.signUp .signUpContent form .secondFormGroup input {
+  background-color: rgb(128, 128, 128);
+  border: none;
+}
+.signUp .signUpContent form .secondFormGroup button {
+  border: none;
+}
+.signUp .signUpContent form .secondFormGroup .confirm {
+  padding: 5px 20px;
+  background-color: #76bed8;
+  font-size: 20px;
+  font-family: "Anton", sans-serif;
+}
+
+/*===========================Login======================*/
+.login {
+  background-image: url(assets/Images/gym.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+}
+.login .photoContent .loginPhoto {
+  width: 135px;
+  height: 133px;
+}
+.login .photoContent span {
+  font-family: "Charm", cursive;
+}
+.login .photoContent .loginPhoto img {
+  border-radius: 50%;
+}
+.login .loginContent .loginTitle h2 {
+  font-size: 50px;
+  color: #76bed8;
+  font-family: "Ceviche One", system-ui;
+}
+.login .loginContent form .formGroup {
+  width: 336px;
+}
+.login .loginContent form .formGroup input {
+  background-color: rgb(128, 128, 128);
+  border: none;
+}
+.login .loginContent form .secondFormGroup button {
+  border: 0;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: "Anton", sans-serif;
+}
+.login .loginContent form .secondFormGroup .loginBtn {
+  padding: 0 41px;
+  background-color: #76bed8;
+}
+
+.login .loginContent form .secondFormGroup .SignUpBtn {
+  padding: 0 50px;
+  background-color: #b16a05;
+}
+
+/*===========================Members======================*/
+
+.members {
+  background-image: url(assets/Images/Members.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: auto;
+}
+.members .membersTitle {
+  background-color: #9c3d3d;
+  width: fit-content;
+  margin: auto;
+  padding: 5px 30px;
+  border-radius: 30px;
+  color: #fff;
+  z-index: 999999;
+  position: relative;
+  font-family: "Italianno", cursive;
+}
+.members .membersTitle h2 {
+  font-size: 60px;
+}
+.members .membarsContent {
+  border-radius: 20px;
+  z-index: 999999;
+  position: relative;
+}
+.members .membarsContent h3 {
+  font-size: 40px;
+  color: #fff;
+  font-family: "Anton", sans-serif;
+}
+.members .membarsContent p {
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+}
+.members .membarsContent .selectThis {
+  background-color: #b16a05;
+  font-size: 15px;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+}
+.members .membersTexts {
+  font-size: 60px;
+  color: #fff;
+  z-index: 999999;
+  position: relative;
+  font-family: "Ceviche One", system-ui;
+}
