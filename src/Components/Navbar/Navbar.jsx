@@ -40,6 +40,16 @@ export default function Navbar() {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <NavLink className={"text-black fw-bold"} to={"/signup"}>
+                signUp
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={"text-black fw-bold"} to={"/login"}>
+                login
+                </NavLink>
+              </li>
             </ul>
           </div>
           <div className="right-nav">
