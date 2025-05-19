@@ -1,18 +1,20 @@
-import React from 'react'
+
 
 export default function Footer() {
+
+ 
   return (
     <>
-      <footer class="footer bg-dark text-light py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h4 class="text-uppercase fw-bold">Gym Pro</h4>
+      <footer className="footer bg-dark text-light py-4">
+  <div className="container">
+    <div className="row">
+      <div className="col-md-4">
+        <h4 className="text-uppercase fw-bold">Gym Pro</h4>
         <p>Your ultimate fitness destination. Join us and transform your body with expert trainers and state-of-the-art equipment.</p>
       </div>
-      <div class="col-md-4">
-        <h5 class="text-uppercase fw-bold">Quick Links</h5>
-        <ul class="list-unstyled">
+      <div className="col-md-4">
+        <h5 className="text-uppercase fw-bold">Quick Links</h5>
+        <ul className="list-unstyled">
           <li><a href="#" className="text-light text-decoration-none">Home</a></li>
           <li><a href="#" className="text-light text-decoration-none">About</a></li>
           <li><a href="#" className="text-light text-decoration-none">Classes</a></li>
@@ -32,9 +34,9 @@ export default function Footer() {
         </div>
       </div>
     </div>
-    <hr class="bg-light"/>
-    <div class="text-center">
-      <p class="mb-0">&copy; 2025 Gym Pro. All Rights Reserved.</p>
+    <hr className="bg-light"/>
+    <div className="text-center">
+      <p className="mb-0">&copy; 2025 Gym Pro. All Rights Reserved.</p>
     </div>
   </div>
 </footer>

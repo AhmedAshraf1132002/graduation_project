@@ -10,29 +10,58 @@ import SignUp from "./Components/SignUp/SignUp";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 import Members from "./Components/Members/Members";
+import GetStarted from "./Components/GetStarted/GetStarted";
+import CounterContextProvider from "./Contexts/CounterContext";
+import AuthContextProvider from "./Contexts/AuthContext";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import ProtectAuthRoutes from "./Components/ProtectAuthRoutes/ProtectAuthRoutes";
+import Chest from "./Components/Chest/Chest";
+import { QueryClient , QueryClientProvider } from "@tanstack/react-query"
+import Shoulder from "./Components/Shoulder/Shoulder";
+import Triceps from "./Components/TrycepsMuscle/TrycepsMuscle";
+import Biceps from "./Components/Biceps/Biceps";
 
 function App() {
-  let router = createBrowserRouter([
+
+ const queryClient = new QueryClient;
+
+  const router = createBrowserRouter([
     {
-      path: "",
+      // RouterProvider hwa ms2ol 3n el routing w hwa ely gwah el layout ely gwaha kol el components
+      path: "/Graduation-Project",
       element: <Layout />,
       children: [
-        { index: true, element: <Home /> },
-        { path: "about", element: <AboutMetaGym /> },
-        { path: "ourgyms", element: <OurGyms /> },
-        { path: "practise", element: <Practise /> },
-        { path: "contact", element: <Contact /> },
-        { path: "members", element: <Members /> },
-        { path: "signup", element: <SignUp /> },
-        { path: "login", element: <Login /> },
+        { index: true, element: <ProtectedRoute> <Home /> </ProtectedRoute> },
+        { path: "getstarted", element: <ProtectedRoute> <GetStarted /> </ProtectedRoute> },
+        { path: "about", element: <ProtectedRoute> <AboutMetaGym />  </ProtectedRoute>  },
+        { path: "ourgyms", element: <ProtectedRoute> <OurGyms /> </ProtectedRoute> },
+
+        { path: "practise", element: <ProtectedRoute> <Practise /> </ProtectedRoute> , children : [
+           { path: "chest", element:  <Chest/>  },
+           { path: "shoulders", element:  <Shoulder/>  },
+           { path: "triceps", element:  <Triceps/>  },
+           { path: "biceps", element:  <Biceps/>  },
+        ] 
+      },
+        { path: "contact", element: <ProtectedRoute> <Contact /> </ProtectedRoute> },
+        { path: "members", element: <ProtectedRoute> <Members /> </ProtectedRoute>  },
+        { path: "signup", element: <ProtectAuthRoutes> <SignUp /> </ProtectAuthRoutes> },
+        { path: "login", element: <ProtectAuthRoutes> <Login /> </ProtectAuthRoutes> },
+       
         { path: "*", element: <NotFound /> },
       ],
-    }],
-);
+    },
+  ]);
 
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>
+     <QueryClientProvider client={queryClient}>
+       <AuthContextProvider>
+        <CounterContextProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </CounterContextProvider>
+      </AuthContextProvider>
+     </QueryClientProvider>
     </>
   );
 }

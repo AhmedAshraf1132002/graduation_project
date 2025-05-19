@@ -4,9 +4,14 @@ import Fire from "/src/assets/Images/Fire.png";
  import Power from "/src/assets/Images/Power.png";
  import O_2 from "/src/assets/Images/O_2.png";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 export default function OurGyms() {
   return (
-    <>
+    <>   
+           <Helmet>
+        <title>OurGyms</title>
+      </Helmet>
+
       <div className="ourGym ">
         <div className="layer"></div>
         <div className="container">

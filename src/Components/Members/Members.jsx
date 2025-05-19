@@ -1,8 +1,13 @@
 import React from "react";
+import { Helmet } from 'react-helmet-async';
 
 export default function Members() {
   return (
-    <>
+    <>  
+             <Helmet>
+        <title>Members</title>
+             </Helmet>
+     
       <div className="members">
         <div className="layer"></div>
         <div className="container">

@@ -1,9 +1,14 @@
 import React from "react";
 import About_Logo from '/src/assets/Images/about.png';
+import { Helmet } from 'react-helmet-async';
 
 export default function AboutMetaGym() {
   return (
-    <>
+    <> 
+             <Helmet>
+        <title>About</title>
+      </Helmet>
+
       <div className="about py-5">
         <div className="container">
           <h2 className="text-center mt-5 pb-5 ">Who We Are</h2>

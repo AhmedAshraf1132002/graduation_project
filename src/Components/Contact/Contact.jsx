@@ -1,9 +1,14 @@
 import React from "react";
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
-    <>
+    <>  
+           <Helmet>
+        <title>Contact</title>
+           </Helmet>
+
       <div className="contact overflow-auto">
         <div className="layer"></div>
         <div className="contactTitle my-5">
