@@ -4,104 +4,86 @@ import signUpLogo from '/src/assets/Images/logo.png';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 
 export default function SignUp() {
-
 
 const [isLoading , setIsLoading] = useState(false);
 const [errorMsg , setErrorMsg] = useState("");
 const [successMsg , setSuccessMsg] = useState("");
 const navigate =  useNavigate();       // bt3mly return l navigate function 34an aro7 mn signUp l login 3latol awl ma a3ml register 3n tare2 function msh Link ya3ny bstkhdam js
 
+async function onSubmit(values) {
+  setSuccessMsg("");
+  setErrorMsg("");
+  setIsLoading(true);
 
-let { handleSubmit , values , handleChange , errors , touched , handleBlur} = useFormik({                // useFormic bt3ml return l object gwah mesthods w properties kteer mnha el initialValues
+  const payload = {
+    username: values.username,
+    email: values.email,
+    date_of_birth: values.date_of_birth,
+    // phone_number: values.phone_number,
+    password: values.password,
+    confirm_password: values.confirm_password,
+  };
+
+  try {
+    const { data } = await axios.post(
+      "https://d151-102-191-71-165.ngrok-free.app/api/v1/users/signup",
+      payload,
+      { headers: { "Content-Type": "application/json" } }
+    );
+
+    setIsLoading(false);
+    setSuccessMsg("Account created successfully!");
+    setTimeout(() => {
+    navigate("/Graduation-Project/verify-otp", {
+    state: { 
+      email: values.email,      // pass email
+      username: values.username // pass username or whatever is needed by your API for OTP
+    }
+  });
+
+}, 500);
+  } catch (err) {
+    setIsLoading(false);
+
+    if (err.response?.data?.detail) {
+      setErrorMsg(err.response.data.detail);
+    } else {
+      setErrorMsg("Something went wrong. Please try again.");
+    }
+  }
+}
+
+
+const { handleSubmit , values , handleChange , errors , touched , handleBlur} = useFormik({                // useFormic bt3ml return l object gwah mesthods w properties kteer mnha el initialValues
   initialValues : {                                                                                      // el values deh hya ely hbd2 ab3tha l Back-End
-    "name": "",
+    "username": "",
     "email":"",
+    // "phone_number" : "",
+    "date_of_birth": "",
     "password":"",
-    "rePassword":"",
-    "id":""
+    "confirm_password":"",
   },
-  onSubmit,     // lazem el data tkon valid 3lshan functio of register ynf3 ytndh 3leha
+  onSubmit ,   // lazem el data tkon valid 3lshan function of register ynf3 ytndh 3leha
   validationSchema : Yup.object({
-    name : Yup.string().required("Name is Required").min(3 , "Name lenght must be more than 3").max(20 , "Name lenght must be less than 20"),
+    username : Yup.string().required("Name is Required").min(3 , "Name length must be more than 3").max(20 , "Name length must be less than 20"),
     email : Yup.string().required("Email is Required").email("Enter Valid Email"),
+    // phone_number : Yup.string().required("Phone number is required").matches(/^01[0-2,5]{1}[0-9]{8}$/, "Enter a valid Egyptian phone number"),
+    date_of_birth : Yup.date().required("Date of Birth is required"),
     password : Yup.string().required("Password is Required").matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/ , "Minimum eight characters, at least one letter, one number and one special character"),
-    rePassword : Yup.string().required("RePassword is Required").oneOf([Yup.ref("password")] , "Password and rePassword must be matched"),
-    id : Yup.string().required("Id is Required")
+    confirm_password : Yup.string().required("Confirm Password is Required").oneOf([Yup.ref("password")] , "Password and confirm_password must be matched"),
+    
   })
 })
 
-
-
-// function validateData(values)
-// {
-
-// let errors = {};
-
-// if(values.name == "")
-//    errors.name = "Name is Required";
-//   else if (values.name.length < 3)
-//     errors.name = "Name lenght must be more than 3"
-//   else if (values.name.length > 20)
-//     errors.name = "Name lenght must be less than 20"
-
-//   if(values.email == "")
-//     errors.email = "Email is Required";
-
-//   if(values.password == "")
-//     errors.password = "password is Required";
-
-//   else if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(values.password) != true)
-//     errors.password = "Minimum eight characters, at least one letter, one number and one special character"
-
-
-//   if(values.rePassword == "")
-//     errors.rePassword = "  RePassword is Required";
-//   else if(values.rePassword != values.password)
-//     errors.rePassword = "Password and repassword must be matched"
-
-//   if(values.id == "")
-//     errors.id = "  Id is Required";
-
-// return errors;
-
-// }
-
-  async function onSubmit()
-  {
-    setSuccessMsg("");
-    setErrorMsg("");
-
-    setIsLoading(true);
-
-     await axios.post("https://ecommerce.routemisr.com/api/v1/auth/signup" ,values).then(({data}) => {
-
-      setIsLoading(false);
-      setSuccessMsg(data.message)
-     setTimeout(() => {
-      navigate("/Graduation-Project/login")
-     })
-
-      console.log(data);
-      
-    }).catch((err) => {
-      setIsLoading(false);
-      setErrorMsg(err.response.data.message);
-      
-      
-      
-    })
-    
-    
-    
-  }
-
-
   return (
     <>
-         
+               <Helmet>
+                 <title>SignUp</title>
+                       </Helmet>
        
        <div className="signUp">
         <div className="container">
@@ -111,19 +93,18 @@ let { handleSubmit , values , handleChange , errors , touched , handleBlur} = us
                 <div className="signUpLogo">
                 <img className='w-100' src={signUpLogo} alt="signUpLogo" />
               </div>
-              <span className='text-white fs-4'>Meta Gym</span>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
               <div className="signUpContent">
-                <form>
+                <form onSubmit={handleSubmit}>
     
                 <div className="formGroup">
-                <label className='text-white ms-1' htmlFor='nameInput'>Name :</label>
-                <input onBlur={handleBlur} onChange={handleChange} value={values.name} type="text" name='name' className="form-control text-white mt-1" id="nameInput" placeholder="Name"/>
-                { touched.name && errors.name && <p className='text-danger'>{errors.name}</p>}
+                <label className='text-white ms-1' htmlFor='usernameInput'>Username :</label>
+                <input onBlur={handleBlur} onChange={handleChange} value={values.username} type="text" name='username' className="form-control text-white mt-1" id="usernameInput" placeholder="Username"/>
+                { touched.username && errors.username && <p className='text-danger'>{errors.username}</p>}
                 </div>
 
                 <div className="formGroup">
@@ -131,6 +112,12 @@ let { handleSubmit , values , handleChange , errors , touched , handleBlur} = us
                 <input onBlur={handleBlur} onChange={handleChange} value={values.email} type="email" name='email' className="form-control text-white mt-1" id="emailInput" placeholder="Email"/>
                 { touched.email && errors.email && <p className='text-danger'>{errors.email}</p>}
                </div>
+
+                {/* <div className="formGroup">
+                <label className='text-white ms-1' htmlFor='phoneInput'>Phone_number :</label>
+                <input onBlur={handleBlur} onChange={handleChange} value={values.phone_number} type="tel" name='phone_number' className="form-control text-white mt-1" id="phoneInput" placeholder="phone"/>
+                { touched.phone_number && errors.phone_number && <p className='text-danger'>{errors.phone_number}</p>}
+               </div> */}
 
                <div className="formGroup">
                 <label className='text-white ms-1' htmlFor='passwordInput'>Password :</label>
@@ -140,24 +127,21 @@ let { handleSubmit , values , handleChange , errors , touched , handleBlur} = us
 
                <div className="formGroup">
                 <label className='text-white ms-1' htmlFor='confirmPasswordInput'>Confirm Password :</label>
-                <input onBlur={handleBlur} onChange={handleChange} value={values.rePassword} type="password" name='rePassword' className="form-control text-white mt-1" id="confirmPasswordInput" placeholder="Confirm Password"/>
-                { touched.rePassword && errors.rePassword && <p className='text-danger'>{errors.rePassword}</p>}
+                <input onBlur={handleBlur} onChange={handleChange} value={values.confirm_password} type="password" name='confirm_password' className="form-control text-white mt-1" id="confirmPasswordInput" placeholder="Confirm Password"/>
+                { touched.confirm_password && errors.confirm_password && <p className='text-danger'>{errors.confirm_password}</p>}
                </div>
 
-                <div className="formGroup">
-                <label className='text-white ms-1' htmlFor='idInput'>Id :</label>
-                <input onBlur={handleBlur} onChange={handleChange} value={values.id} type="number" name='id' className="form-control text-white mt-1" id="idInput" placeholder="Id"/>
-                { touched.id && errors.id && <p className='text-danger'>{errors.id}</p>}
+               <div className="formGroup ">
+                <label className='text-white ms-1' htmlFor='dateInput'>Date_of_birth :</label>
+                <input onBlur={handleBlur} onChange={handleChange} value={values.date_of_birth} type="date" name='date_of_birth' className='form-control text-white text-secondary ' id="dateInput" />
+                { touched.date_of_birth && errors.date_of_birth && <p className='text-danger'>{errors.date_of_birth}</p>}
                </div>
 
-                <div className="secondFormGroup mt-5 d-flex justify-content-around align-items-center ">
-                <input type="date" className='form-control text-white text-secondary mx-3' id="dateInput" />
-                {/* <button className='mx-3' type='button'>sex</button> */}
-                <Link to={"/Graduation-Project/login"}><button className='text-black fw-bolder confirm px-5 bg-danger mx-5' type='submit'>Login </button></Link>
-                <button onClick={handleSubmit} type='submit' className={`text-black btn fw-bolder confirm mx-5 ${isLoading ? 'bg-secondary'  : 'bg-primary'}`} disabled ={isLoading}> Register { isLoading && <i className="fas fa-spinner fa-spin"></i>} </button>
+          
+                <div className="secondFormGroup text-end mt-5">
+                <button type='submit' className={`text-black fw-bolder  ${isLoading ? 'bg-secondary'  : '.signUp .signUpContent form .secondFormGroup button-primary'}`} disabled ={isLoading}> Register <i className="fa-solid fa-arrow-right-long ms-1"></i> { isLoading && <i className="fas fa-spinner fa-spin"></i>} </button>
                  { errorMsg && <p className='text-danger'>{errorMsg}</p>}
                  { successMsg && <p className='text-success'>{successMsg}</p>}
-
                </div>
                  
                 </form>

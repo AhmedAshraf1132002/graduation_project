@@ -5,7 +5,13 @@ import Fire from "/src/assets/Images/Fire.png";
  import O_2 from "/src/assets/Images/O_2.png";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from "react-i18next";
 export default function OurGyms() {
+
+
+const { t } = useTranslation();
+
+
   return (
     <>   
            <Helmet>
@@ -23,7 +29,7 @@ export default function OurGyms() {
                 </div>
                 </form>
           <div className="row my-5">
-            <div className="col-md-3 overflow-auto">
+            <div className="col-md-3   ">
               <div className="first content">
                 <div className="topContent">
                   <img className="w-100" src={Weider} alt="Weider_Logo" />
@@ -42,7 +48,7 @@ export default function OurGyms() {
                
               </div>
             </div>
-            <div className="col-md-3   overflow-auto">
+            <div className="col-md-3   ">
               <div className="content">
                 <div className="topContent">
                   <img className="w-100" src={Fire} alt="Fire_Logo" />
@@ -61,7 +67,7 @@ export default function OurGyms() {
                
               </div>
             </div>
-            <div className="col-md-3   overflow-auto">
+            <div className="col-md-3   ">
               <div className="content ">
                 <div className="topContent">
                   <img className="w-100" src={Power} alt="Power_Logo" />
@@ -80,7 +86,7 @@ export default function OurGyms() {
                
               </div>
             </div>
-            <div className="col-md-3   overflow-auto">
+            <div className="col-md-3   ">
               <div className="content ">
                 <div className="topContent">
                   <img className="w-100" src={O_2} alt="O_2_Logo" />
@@ -105,3 +111,4 @@ export default function OurGyms() {
     </>
   );
 }
+

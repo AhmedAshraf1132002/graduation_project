@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function GetStarted() {
 
-useEffect(() => {
-  <GetStarted/>
-} , [])
+
   return (
     <>
       <div className="getStarted">
@@ -29,7 +27,7 @@ useEffect(() => {
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </>
   );

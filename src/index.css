@@ -13,16 +13,21 @@ li {
 li a {
   text-decoration: none;
 }
+
 .layer {
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 /*============Navbar==========*/
+.navbar {
+  position: relative;
+  z-index: 999999;
+}
 .navbar .collapse ul li .active {
-  color: #76BED8    !important;   
+  color: #76bed8 !important;
   background-color: #000;
   padding: 5px 25px;
   border-radius: 20px;
@@ -35,86 +40,142 @@ li a {
   margin: 0 20px;
   font-size: 17px;
 }
-/* .navbar {
-  background-color: #1e84a9;
-} */
-/* .navbar .left-nav {
-  width: 66px;
-  height: 65px;
-} */
-/* .navbar span {
-  font-size: 15px;
-  font-family: "Charm", cursive;
-} */
-/* .navbar .left-nav img {
-  border-radius: 50%;
-} */
 
-
-
-/* .navbar .center-nav ul li {
-  font-family: "Arima", system-ui;
-} */
-/* .navbar .right-nav ul li .english {
-  background-color: #76bed8;
-  border-radius: 30px;
-  padding: 5px 15px;
-  font-size: 20px;
-} */
-/* .navbar .right-nav ul li .qrCode {
-  background-color: #b16a05;
-  border-radius: 30px;
-  padding: 5px 15px;
-  font-size: 20px;
-} */
-/* .navbar .right-nav ul li .Members {
-  background-color: #9c3d3d;
-  border-radius: 30px;
-  padding: 5px 15px;
-  font-size: 20px;
-} */
 /*============Home==========*/
-.Home {
+
+/* .Home {
   background-image: url(assets/Images/home.png);
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 100vh;
   position: relative;
+  overflow: auto;
+  animation: fadeZoom 1.5s ease-in-out forwards;
+} */
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
+
+/* Caption */
 .Home .Caption {
   position: relative;
   z-index: 9999;
   text-align: center;
+  animation: slideUp 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0; /* Will fade in with animation */
 }
+
+/* Logo */
 .Home .Caption .homePhoto {
-  width: 280px;
-  height: 272px;
+  width: 300px;
   margin: auto;
+  overflow: auto;
+  animation: slideUp 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
-.Home .Caption .homePhoto img {
-  border-radius: 50%;
-}
-.Home .Caption .meta {
-  font-size: 60px;
-  font-family: "Charm", cursive;
-}
+
+/* Title */
 .Home .Caption .title {
-  font-size: 70px;
+  font-size: 60px;
   font-family: "Ceviche One", system-ui;
+  animation: slideUp 1.5s ease-in-out forwards;
+  animation-delay: 1.1s;
+  opacity: 0;
 }
+
+/* Button */
 .Home .Caption .btn {
   background-color: #76bed8;
   border-radius: 40px;
   padding: 10px 50px;
   font-size: 50px;
-  color: #b16a05;
+  color: #fff;
   font-weight: bolder;
   font-family: "Ceviche One", system-ui;
+  animation: slideUp 1.5s ease-in-out forwards;
+  animation-delay: 1.4s;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query for tablets */
+@media (max-width: 992px) {
+  .Home .Caption .title {
+    font-size: 40px;
+  }
+
+  .Home .Caption .btn {
+    font-size: 30px;
+    padding: 8px 40px;
+  }
+
+  .Home .Caption .homePhoto {
+    width: 250px;
+  }
+
+  .Home {
+    background-size: cover;
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 576px) {
+  .Home .Caption .title {
+    font-size: 30px;
+  }
+
+  .Home .Caption .btn {
+    font-size: 20px;
+    padding: 6px 30px;
+  }
+
+  .Home .Caption .homePhoto {
+    width: 200px;
+  }
 }
 
 /*============About==========*/
 .about {
-  background-color: #000;
+  background-image: url(assets/Images/about_background.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: auto;
+}
+.about .container {
+  position: relative;
+  z-index: 9999999;
 }
 .about h2 {
   color: #b16a05;
@@ -155,33 +216,149 @@ li a {
   border: 1px solid gray;
 }
 
+/* Tablets and below */
+@media (max-width: 992px) {
+  .about {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .about h2 {
+    font-size: 50px;
+  }
+
+  .about .aboutLeft h3 {
+    font-size: 40px;
+  }
+
+  .about .aboutLeft .paragraphs {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .about .aboutRight {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+  .about h2 {
+    font-size: 36px;
+  }
+
+  .about .aboutLeft h3 {
+    font-size: 28px;
+  }
+
+  .about .aboutLeft .paragraphs {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .about .aboutRight {
+    width: 100%;
+    height: auto;
+  }
+
+  .about .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about .row {
+    flex-direction: column;
+  }
+
+  .about .aboutRight img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /*============OurGyms==========*/
+
 .ourGym {
   background-image: url(assets/Images/OurGym.png);
   background-position: center;
   background-size: 100% 100%;
+  /* background-attachment: fixed; */
   height: 100vh;
   overflow: auto;
+  padding: 20px 0; /* add some padding for small screens */
 }
+
 .ourGym .container {
   position: relative;
   z-index: 9999999;
 }
+
 .ourGym .content {
   border-radius: 20px;
+  margin-bottom: 20px; /* space between cards on mobile */
 }
+
 .ourGym .content .topContent img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
+
 .ourGym .content .bottomContnent {
   background-color: #3b3f47;
   border-radius: 20px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  color: white;
 }
 
+/* Media Queries */
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .ourGym {
+    height: auto; /* Let height grow with content */
+    background-size: cover;
+    padding: 15px;
+  }
+
+  .ourGym .row.my-5 {
+    margin: 0 -10px;
+  }
+
+  /* Make columns full width */
+  .ourGym .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .ourGym .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+/* Keep the 4 column layout as default */
+
 /*============Practise==========*/
+.practise {
+  background-image: url(assets/Images/practise_3.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: auto;
+}
+.practise .container {
+  position: relative;
+  z-index: 9999999;
+}
 .practise .title {
   font-size: 80px;
   background-color: #9c3d3d;
@@ -204,25 +381,997 @@ li a {
   color: #fff;
   font-family: "Ceviche One", system-ui;
 }
-.practise .two {
-  height: 310px;
-}
+
 .practise .practise_content .genderTwo {
   padding: 10px 50px;
 }
-.thirdSection .thirdContent .Img {
-  width: 350px;
-}
-.thirdSection .thirdContent p {
-  width: 246px;
-}
 
-.practise .container .iconsOfMuscles button{
-  width: 25%;
+.practise .container .iconsOfMuscles button {
   background-color: transparent;
   border: 0;
 }
+.practise .iconsOfMuscles button img {
+  width: 100px;
+}
 
+/* Base styles (already defined above) */
+
+@media (max-width: 1200px) {
+  .practise .title {
+    font-size: 60px;
+  }
+
+  .practise .practise_content .image {
+    width: 400px;
+  }
+
+  .practise .practise_content .btn {
+    font-size: 50px;
+    padding: 10px 20px;
+  }
+
+  .practise .iconsOfMuscles button img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .practise .row {
+    flex-direction: column;
+  }
+
+  .practise .col-md-6 {
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 30px;
+  }
+
+  .practise .practise_content {
+    padding: 0 !important;
+  }
+
+  .practise .practise_content .image {
+    width: 320px;
+  }
+
+  .practise .practise_content .btn {
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+
+  .practise .iconsOfMuscles {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .practise .iconsOfMuscles button img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .practise .title {
+    font-size: 40px;
+    padding: 5px 20px;
+  }
+
+  .practise .practise_content .image {
+    width: 250px;
+  }
+
+  .practise .practise_content .btn {
+    font-size: 30px;
+    padding: 8px 15px;
+  }
+
+  .practise .iconsOfMuscles button img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .practise .practise_content .image {
+    width: 200px;
+  }
+
+  .practise .practise_content .btn {
+    font-size: 24px;
+    padding: 6px 10px;
+  }
+
+  .practise .iconsOfMuscles button img {
+    width: 50px;
+  }
+}
+
+/*===========================latissimusDorsi======================*/
+
+.latissimusDorsi {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.latissimusDorsi .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.7);
+  z-index: 1;
+}
+
+.latissimusDorsi .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.latissimusDorsi .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.latissimusDorsi .video {
+  border: 2px solid #ff7eb9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.latissimusDorsi .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 126, 185, 0.5);
+}
+
+/* Headings */
+.latissimusDorsi h1,
+.latissimusDorsi h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #ff7eb9;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.latissimusDorsi p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.latissimusDorsi p strong,
+.latissimusDorsi p em {
+  color: #ff7eb9;
+}
+
+.latissimusDorsi p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .latissimusDorsi .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .latissimusDorsi p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .latissimusDorsi h1 {
+    font-size: 1.8rem;
+  }
+
+  .latissimusDorsi h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .latissimusDorsi .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+/*===========================Shoulders======================*/
+
+.shoulderMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.shoulderMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.shoulderMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.shoulderMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.shoulderMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shoulderMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.shoulderMuscle h1,
+.shoulderMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.shoulderMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.shoulderMuscle p strong {
+  color: #007bff;
+}
+
+.shoulderMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .shoulderMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .shoulderMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .shoulderMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .shoulderMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .shoulderMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Triceps======================*/
+
+.tricepsMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.tricepsMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.tricepsMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.tricepsMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.tricepsMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tricepsMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.tricepsMuscle h1,
+.tricepsMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.tricepsMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.tricepsMuscle p strong {
+  color: #007bff;
+}
+
+.tricepsMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .tricepsMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .tricepsMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .tricepsMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .tricepsMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .tricepsMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Biceps======================*/
+
+.bicepsMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.bicepsMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.bicepsMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.bicepsMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.bicepsMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bicepsMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.bicepsMuscle h1,
+.bicepsMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.bicepsMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.bicepsMuscle p strong {
+  color: #007bff;
+}
+
+.bicepsMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .bicepsMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .bicepsMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .bicepsMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .bicepsMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .bicepsMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Quadriceps======================*/
+
+.quadricepsMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.quadricepsMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.quadricepsMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.quadricepsMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.quadricepsMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quadricepsMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.quadricepsMuscle h1,
+.quadricepsMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.quadricepsMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.quadricepsMuscle p strong {
+  color: #007bff;
+}
+
+.quadricepsMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .quadricepsMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .quadricepsMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .quadricepsMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .quadricepsMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .quadricepsMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Glutes======================*/
+
+.glutesMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.glutesMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.glutesMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.glutesMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.glutesMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glutesMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.glutesMuscle h1,
+.glutesMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.glutesMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.glutesMuscle p strong {
+  color: #007bff;
+}
+
+.glutesMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glutesMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .glutesMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .glutesMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .glutesMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .glutesMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Chest======================*/
+
+.chestMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.chestMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.chestMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.chestMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.chestMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chestMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.chestMuscle h1,
+.chestMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.chestMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.chestMuscle button{
+    font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+  
+}
+.chestMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chestMuscle p strong {
+  color: #007bff;
+}
+
+.chestMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .chestMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .chestMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .chestMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .chestMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .chestMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================Id======================*/
+
+.idInputSection {
+  background-image: url(assets/Images/outlet.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: auto;
+}
+
+.idInputSection .container {
+  z-index: 999999;
+  position: relative;
+}
 
 /*===========================Contact======================*/
 .contact {
@@ -230,6 +1379,7 @@ li a {
   background-position: center;
   background-size: 100% 100%;
   height: 100vh;
+  overflow-y: auto;
 }
 .contact .container {
   background-color: #b3b3b3;
@@ -237,6 +1387,7 @@ li a {
   width: 40%;
   z-index: 999999;
   position: relative;
+  padding: 20px;
 }
 .contact .contactTitle h2 {
   font-size: 80px;
@@ -250,6 +1401,100 @@ li a {
   z-index: 999999;
   position: relative;
   font-family: "Italianno", cursive;
+}
+
+.membership-header {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.membership-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.membership-title i {
+  color: #ffc107;
+  font-size: 1.5rem;
+}
+
+/* Optional animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .contact .container {
+    width: 70%;
+  }
+
+  .contact .contactTitle h2 {
+    font-size: 60px;
+  }
+
+  .contact p,
+  .contact span,
+  .contact .icons i,
+  .contact .icons a {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Mobiles (≤ 576px) */
+@media (max-width: 576px) {
+  .contact {
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  .contact .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .contact .contactTitle h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .contact .icons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact .icons .d-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact p,
+  .contact span {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .contact .icons i {
+    font-size: 24px;
+  }
+
+  .contact .icons a {
+    font-size: 14px;
+  }
 }
 
 /*===========================signUp======================*/
@@ -290,25 +1535,76 @@ li a {
   color: #fff;
 }
 .signUp .signUpContent form .secondFormGroup {
-  width: 70%;
   border-radius: 5px;
   margin-top: 20px;
 }
-.signUp .signUpContent form .secondFormGroup input {
-  width: 131px;
-}
-.signUp .signUpContent form .secondFormGroup input {
-  background-color: rgb(128, 128, 128);
-  border: none;
-}
+
 .signUp .signUpContent form .secondFormGroup button {
   border: none;
-}
-.signUp .signUpContent form .secondFormGroup .confirm {
   padding: 5px 20px;
   background-color: #76bed8;
   font-size: 20px;
   font-family: "Anton", sans-serif;
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .signUp .signUpLogo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .signUp .signUpContent .formGroup,
+  .signUp .signUpContent form .secondFormGroup {
+    width: 90% !important;
+  }
+
+  .signUp .signUpContent form .secondFormGroup button {
+    padding: 10px 30px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .signUp {
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    padding-bottom: 40px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .signUp .signUpLogo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .signUp .signUpContent .formGroup,
+  .signUp .signUpContent form .secondFormGroup {
+    width: 70% !important;
+  }
+
+  .signUp .signUpContent form .secondFormGroup button {
+    font-size: 18px;
+    padding: 10px 40px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .signUp .signUpContent .formGroup,
+  .signUp .signUpContent form .secondFormGroup {
+    width: 50% !important;
+  }
+}
+
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .signUp .signUpContent .formGroup,
+  .signUp .signUpContent form .secondFormGroup {
+    width: 336px !important;
+  }
 }
 
 /*===========================Login======================*/
@@ -340,13 +1636,15 @@ li a {
   background-color: rgb(128, 128, 128);
   border: none;
 }
+
 .login .loginContent form .secondFormGroup button {
-  width: fit-content;
+  /* width: fit-content; */
   border: 0;
   border-radius: 10px;
   font-size: 25px;
   font-family: "Anton", sans-serif;
 }
+
 .login .loginContent form .secondFormGroup .loginBtn {
   padding: 0 41px;
   background-color: #76bed8;
@@ -356,10 +1654,95 @@ li a {
   padding: 0 45px;
   background-color: #b16a05;
 }
+.login .loginContent form .secondFormGroup {
+  width: 336px;
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .login {
+    background-size: cover;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .login .photoContent {
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .login .photoContent .loginPhoto {
+    width: 90px;
+    height: 90px;
+  }
+
+  .login .loginContent .loginTitle h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .login .loginContent form .formGroup {
+    width: 90% !important;
+    margin: 20px auto;
+  }
+
+  .login .loginContent form .secondFormGroup {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .login .loginContent form .secondFormGroup button {
+    width: 90% !important;
+    font-size: 18px;
+    padding: 10px 0;
+    margin: 10px auto;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .login .photoContent {
+    width: 60% !important;
+    align-items: center !important;
+  }
+
+  .login .photoContent .loginPhoto {
+    width: 110px;
+    height: 110px;
+  }
+
+  .login .loginContent form .formGroup {
+    width: 70% !important;
+  }
+
+  .login .loginContent form .secondFormGroup button {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .login .loginContent form .formGroup {
+    width: 60% !important;
+  }
+
+  .login .loginContent form .secondFormGroup {
+    width: 60% !important;
+  }
+}
+
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .login .loginContent form .formGroup,
+  .login .loginContent form .secondFormGroup {
+    width: 336px !important;
+  }
+}
 
 /*===========================Members======================*/
 
-.members {
+/* .members {
   background-image: url(assets/Images/Members.png);
   background-position: center;
   background-size: 100% 100%;
@@ -381,40 +1764,65 @@ li a {
   font-size: 60px;
 }
 .members .membarsContent {
+  width: 300px;
   border-radius: 20px;
   z-index: 999999;
   position: relative;
+} */
+.members {
+  background-image: url(assets/Images/bb.png);
+  background-position: center;
+  background-size: 100% 100%;
+  overflow: auto;
+  height: 100vh;
 }
-.members .membarsContent h3 {
-  font-size: 40px;
-  color: #fff;
-  font-family: "Anton", sans-serif;
+.plan-box {
+  background-color: rgba(0, 0, 0, 0.637);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.members .membarsContent p {
-  text-align: center;
-  font-size: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-family: "Inter", sans-serif;
+.plan-box-two {
+  background-color: rgba(128, 128, 128, 0.719);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.members .membarsContent .selectThis {
-  background-color: #b16a05;
-  font-size: 15px;
-  color: #fff;
-  padding: 5px 15px;
-  border-radius: 10px;
-  text-align: center;
-  width: fit-content;
-  margin: auto;
-  font-family: "Inter", sans-serif;
+
+.plan-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-.members .membersTexts {
-  font-size: 60px;
-  color: #fff;
-  z-index: 999999;
-  position: relative;
-  font-family: "Ceviche One", system-ui;
+
+.plan-box-two:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.logo img {
+  object-fit: contain;
+}
+
+.plan-box,
+.plan-box-two {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
 /*===========================GetStarted======================*/
 .getStarted {
   background-image: url(assets/Images/home.png);
@@ -423,11 +1831,11 @@ li a {
   height: 100vh;
   overflow: auto;
 }
-.getStarted .getStartedContent{
+.getStarted .getStartedContent {
   position: relative;
   z-index: 99999999;
 }
-.getStarted .getStartedContent .title{
+.getStarted .getStartedContent .title {
   width: fit-content;
   margin: auto;
   color: #fff;
@@ -436,30 +1844,228 @@ li a {
 .getStarted .getStartedContent .title h2 {
   font-size: 80px;
 }
-.getStarted .getStartedContent .title h2 span{
-  color: #76BED8;
+.getStarted .getStartedContent .title h2 span {
+  color: #76bed8;
 }
-.getStarted .getStartedContent p{
+.getStarted .getStartedContent p {
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   color: #fff;
   font-family: "Inknut Antiqua", serif;
 }
-.getStarted .getStartedContent .geStartedBtn button{
+.getStarted .getStartedContent .geStartedBtn button {
   padding: 5px 50px;
   border: 0;
   font-size: 30px;
   border-radius: 20px;
-  background-color: #76BED8;
+  background-color: #76bed8;
   font-weight: 700;
   font-family: "Modern Antiqua", serif;
 }
-.getStarted .getStretedTexts{
+.getStarted .getStretedTexts {
   font-size: 60px;
   color: #fff;
   z-index: 999999;
   position: relative;
   font-family: "Ceviche One", system-ui;
 }
-/*===========================MuscleMap======================*/
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseText {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes layerFade {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Layer background animation */
+.getStarted .layer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: layerFade 2s ease-in-out forwards;
+}
+
+/* Content Entrance Animation */
+.getStarted .getStartedContent {
+  animation: fadeSlideUp 1.2s ease-out both;
+}
+
+/* Button Zoom */
+.getStarted .getStartedContent .geStartedBtn button {
+  animation: zoomIn 1.5s ease-out 1.2s both;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.getStarted .getStartedContent .geStartedBtn button:hover {
+  background-color: #5da5be;
+  transform: scale(1.05);
+}
+
+/* Bottom Pulsing Text */
+.getStarted .getStretedTexts span {
+  animation: pulseText 2.5s ease-in-out infinite;
+  display: inline-block;
+}
+.getStarted .getStretedTexts span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.getStarted .getStretedTexts span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/*===========================Footer======================*/
+
+.footer {
+  background-color: #212529; /* dark */
+  color: #f8f9fa; /* light */
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer h4,
+.footer h5 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer p,
+.footer ul {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.footer a {
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffc107; /* Bootstrap warning color for hover */
+  text-decoration: underline;
+}
+
+/* Social icons spacing */
+.footer .fs-4 {
+  margin-right: 1rem;
+}
+
+.footer hr {
+  border-color: #f8f9fa;
+  margin: 1.5rem 0;
+}
+
+/* Responsive media queries */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .footer .row {
+    text-align: center;
+  }
+
+  .footer .col-12 {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer .fs-4 {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer .row {
+    text-align: left;
+  }
+
+  .footer .col-sm-6 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .footer .col-md-4 {
+    padding: 0 1rem;
+  }
+
+  .footer p,
+  .footer ul {
+    font-size: 1rem;
+  }
+}
+/* =============================VerifyOtp-Component======================== */
+.verifyOtp {
+  background-image: url(assets/Images/bb.png);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* =============================Coming-Soon-Component======================== */
+.coming-soon {
+  height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+/* =============================incline-dumbbell-section======================== */
+
+.incline-dumbbell-section {
+  min-height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  padding: 20px;
+}
+
+.custom-card {
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid #ffffff22;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+  
+}
+
+.custom-card video {
+  max-width: 100%;
+  height: auto;
+}

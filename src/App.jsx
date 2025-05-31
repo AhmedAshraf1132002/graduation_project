@@ -1,3 +1,4 @@
+import "./i18n";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import AboutMetaGym from "./Components/AboutMetaGym/AboutMetaGym";
@@ -20,8 +21,32 @@ import { QueryClient , QueryClientProvider } from "@tanstack/react-query"
 import Shoulder from "./Components/Shoulder/Shoulder";
 import Triceps from "./Components/TrycepsMuscle/TrycepsMuscle";
 import Biceps from "./Components/Biceps/Biceps";
+import Gastrocnemius from "./Components/Gastrocnemius/Gastrocnemius";
+import Quadriceps from "./Components/Quadriceps/Quadriceps";
+import Hamstrings from "./Components/Hamstrings/Hamstrings";
+import Glutes from "./Components/Glutes/Glutes";
+import LatissimusDorsi from "./Components/LatissimusDorsi/LatissimusDorsi";
+import Trapezius from "./Components/Trapezius/Trapezius";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import UserIdProvider from "./Contexts/UserIdContext";
+import VerifyEmailOTP from "./Components/VerifyEmailOTP/VerifyEmailOTP";
+import Id from "./Components/Id/Id";
+import ComingSoon from "./Components/ComingSoon/ComingSoon";
+import InclineDumbbellBenchPress from "./Components/InclineDumbbellBenchPress/InclineDumbbellBenchPress";
+
+
 
 function App() {
+
+
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = dir;
+  }, [i18n.language]);
+
 
  const queryClient = new QueryClient;
 
@@ -32,22 +57,29 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <ProtectedRoute> <Home /> </ProtectedRoute> },
-        { path: "getstarted", element: <ProtectedRoute> <GetStarted /> </ProtectedRoute> },
+        { path: "getstarted", element:  <GetStarted />  },
         { path: "about", element: <ProtectedRoute> <AboutMetaGym />  </ProtectedRoute>  },
         { path: "ourgyms", element: <ProtectedRoute> <OurGyms /> </ProtectedRoute> },
-
-        { path: "practise", element: <ProtectedRoute> <Practise /> </ProtectedRoute> , children : [
-           { path: "chest", element:  <Chest/>  },
-           { path: "shoulders", element:  <Shoulder/>  },
-           { path: "triceps", element:  <Triceps/>  },
-           { path: "biceps", element:  <Biceps/>  },
-        ] 
-      },
+        { path: "practise", element: <ProtectedRoute> <Practise /> </ProtectedRoute> },
+        { path: "chestexercises", element:  <ProtectedRoute> <Chest/> </ProtectedRoute> },
+        { path: "incline-dumbbell-bench-press", element:  <ProtectedRoute> <InclineDumbbellBenchPress/> </ProtectedRoute> },
+        // { path: "deltoidexercises", element: <ProtectedRoute> <Deltoid /> </ProtectedRoute> },
+        { path: "shouldersexercises", element: <ProtectedRoute> <Shoulder/> </ProtectedRoute>   },
+        { path: "tricepsexercises", element:  <ProtectedRoute> <Triceps/> </ProtectedRoute>   },
+        { path: "bicepsexercises", element:  <ProtectedRoute> <Biceps/> </ProtectedRoute> },
+        { path: "gastrocnemiusexercises", element:  <ProtectedRoute> <Gastrocnemius/> </ProtectedRoute>},
+        { path: "quadricepsexercises", element:  <ProtectedRoute> <Quadriceps/> </ProtectedRoute>},
+        { path: "hamstringsexercises", element:  <ProtectedRoute> <Hamstrings/> </ProtectedRoute>},
+        { path: "glutesexercises", element:  <ProtectedRoute> <Glutes/> </ProtectedRoute>},
+        { path: "latissimusdorsiexercises", element:  <ProtectedRoute> <LatissimusDorsi/> </ProtectedRoute>},
+        { path: "trapeziusexercises", element:  <ProtectedRoute> <Trapezius/> </ProtectedRoute>},
         { path: "contact", element: <ProtectedRoute> <Contact /> </ProtectedRoute> },
-        { path: "members", element: <ProtectedRoute> <Members /> </ProtectedRoute>  },
+        { path: "id", element: <ProtectedRoute> <Id/> </ProtectedRoute> },
+        { path: "members", element:  <ProtectedRoute> <Members /> </ProtectedRoute>  },
+        { path: "coming-soon", element:  <ProtectedRoute> <ComingSoon/> </ProtectedRoute>  },
         { path: "signup", element: <ProtectAuthRoutes> <SignUp /> </ProtectAuthRoutes> },
         { path: "login", element: <ProtectAuthRoutes> <Login /> </ProtectAuthRoutes> },
-       
+        { path: "verify-otp", element: <ProtectAuthRoutes> <VerifyEmailOTP /> </ProtectAuthRoutes> },
         { path: "*", element: <NotFound /> },
       ],
     },
@@ -55,10 +87,13 @@ function App() {
 
   return (
     <>
+    
      <QueryClientProvider client={queryClient}>
        <AuthContextProvider>
         <CounterContextProvider>
-          <RouterProvider router={router}></RouterProvider>
+          <UserIdProvider>
+            <RouterProvider router={router}></RouterProvider>
+          </UserIdProvider>
         </CounterContextProvider>
       </AuthContextProvider>
      </QueryClientProvider>

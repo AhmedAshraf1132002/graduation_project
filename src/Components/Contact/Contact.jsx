@@ -1,15 +1,15 @@
 import React from "react";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
-    <>  
-           <Helmet>
+    <>
+      <Helmet>
         <title>Contact</title>
-           </Helmet>
+      </Helmet>
 
-      <div className="contact overflow-auto">
+      <div className="contact">
         <div className="layer"></div>
         <div className="contactTitle my-5">
           <h2 className="text-white">Contact</h2>
@@ -29,11 +29,15 @@ export default function Contact() {
                 <div className="icons my-5">
                   <div className="d-flex justify-content-center align-items-center">
                     <i className="fa-brands fa-facebook-f fs-1"></i>
-                    <Link className="ms-3 text-black fw-bold">facebook.com</Link>
+                    <Link className="ms-3 text-black fw-bold">
+                      facebook.com
+                    </Link>
                   </div>
                   <div className="d-flex justify-content-center align-items-center my-4">
                     <i className="fa-brands fa-instagram fs-1"></i>
-                    <Link className="ms-3 text-black fw-bold">instgram.com</Link>
+                    <Link className="ms-3 text-black fw-bold">
+                      instgram.com
+                    </Link>
                   </div>
                   <div className="d-flex justify-content-center align-items-center">
                     <i className="fa-brands fa-twitter fs-1"></i>
@@ -42,8 +46,8 @@ export default function Contact() {
                 </div>
                 <p className="text-center">
                   Meta Gym ابق قويًا، وكن الأفضل! في <br /> القوة ليست مجرد
-                  عضلات، بل عزيمة لا تنكسر <br/> 💪🔥! استمر في التحدي، ارفع مستواك، واصنع
-                  أفضل نسخة منك
+                  عضلات، بل عزيمة لا تنكسر <br /> 💪🔥! استمر في التحدي، ارفع
+                  مستواك، واصنع أفضل نسخة منك
                 </p>
               </div>
             </div>

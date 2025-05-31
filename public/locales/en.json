@@ -1,0 +1,38 @@
+{ 
+  
+  "Home": "Home",
+  "About Us": "About Us",
+  "OurGyms": "OurGyms",
+  "Practise": "Practise",
+  "Contact": "Contact",
+  "Members": "Members",
+  "Login": "Login",
+  "Register": "Register",
+  "SignOut": "SignOut",
+  "QrCode": "QrCode",
+
+  "ScanTitle": "Scan For Your Muscles",
+  "QrButton": "Qr code..",
+
+  "FirstParagraph": "At Gym and Fitness, we believe that fitness and wellbeing are the cornerstones of a full and vibrant life, we began our journey as a family-owned business dedicated to providing exceptional gym equipment at affordable prices. But, we dreamed bigger than just being an ordinary fitness equipment supplier; we aspired to lead the industry.",
+  "SecondParagraph" : "Our real success lies in the thousands of customers we've empowered to live longer, more joyful, and healthier lives. We're more than just a fitness company – we're your partners in health, your cheerleaders on the sideline, motivating you to reach your personal fitness goals. Embrace the fitness journey with us and see how it transforms your world.",
+  "ThirdParagraph" : " Join us in our mission to improve lives through fitness and wellness, because at Gym and Fitness, your health is our passion." ,  
+  "FourthParagraph"  : " We've moved beyond just supplying gear – we've become advocates for fitness, wellbeing and life enrichment. Our commitment to excellence is reflected not only in the quality equipment we provide but also in the lives we've improved",  
+  "AboutHeading" : "About Us" ,
+  "About_Title" : "Who We Are"  ,
+  "Exercises" : "Exercises" ,
+  "Female" : "Female",
+  "Male" : "Male" ,
+  "MembersTitle" : "Choose Your Membership Plan",
+  "MembersBasicParagraph" : "Our Basic Plan is ideal for those just starting their fitness journey. It includes access to the gym during regular hours, use of all cardio and weight training equipment, and one complimentary orientation session with a personal trainer. Stay motivated and build consistency at your own pace, all while enjoying a clean, supportive workout environment.",
+  "MembersPremiumParagraph" : "The Premium Plan offers everything in the Basic Plan and more. Enjoy unlimited access to all gym facilities, group fitness classes (yoga, spinning, HIIT), advanced training zones, and weekly personal training sessions. Plus, benefit from nutrition guidance and priority support. This plan is perfect for those who are serious about achieving their fitness goals faster and more effectively.",
+  "MembersBasicButton" :  "Basic Plan",
+  "MembersPremiumButton" :  "Premium Plan"
+                    
+                    
+                                
+                                   
+                    
+                
+
+}
