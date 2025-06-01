@@ -28,7 +28,7 @@ export default function Practise() {
   const handleMuscleClick = (path) => {
     if (!userId && targetPath) {
       // If no valid ID, go to members first
-      navigate("/Graduation-Project/members", {
+      navigate("/members", {
         state: { returnPath: path },
       });
     } else {
@@ -55,7 +55,7 @@ export default function Practise() {
                     <img className="w-100" src={fezail} alt="Female_Logo" />
                   </div>
                   <button
-                    onClick={() => navigate("/Graduation-Project/coming-soon")}
+                    onClick={() => navigate("/coming-soon")}
                     className="gender btn"
                   >
                     {t("Female")}
@@ -85,21 +85,21 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/shouldersexercises"
+                            "/shouldersexercises"
                           )
                         }
                         className="shouldersIcon"
                       >
                         <img src={Shoulders} alt="shoulders_Icon" />
 
-                        {/* <Link to={"/Graduation-Project/shouldersexercises"}>
+                        {/* <Link to={"/shouldersexercises"}>
                         </Link> */}
                       </button>
 
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/chestexercises"
+                            "/chestexercises"
                           )
                         }
                         className="chestIcon"
@@ -110,7 +110,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/tricepsexercises"
+                            "/tricepsexercises"
                           )
                         }
                         className="tricepsIcon"
@@ -121,7 +121,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/bicepsexercises"
+                            "/bicepsexercises"
                           )
                         }
                         className="bicepsIcon"
@@ -132,7 +132,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/latissimusdorsiexercises"
+                            "/latissimusdorsiexercises"
                           )
                         }
                         className="latissimusDorsiIcon"
@@ -143,7 +143,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/trapeziusexercises"
+                            "/trapeziusexercises"
                           )
                         }
                         className="trapeziusIcon"
@@ -152,7 +152,7 @@ export default function Practise() {
                       </button>
 
                       {/* <button className="deltoid">
-                  <Link to={"/Graduation-Project/deltoidexercises"}>
+                  <Link to={"/deltoidexercises"}>
                     <img src={Deltoid} alt="Deltoid_logo" />
                   </Link>
                 </button> */}
@@ -160,7 +160,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/quadricepsexercises"
+                            "/quadricepsexercises"
                           )
                         }
                         className="quadricepsIcon"
@@ -171,7 +171,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/hamstringsexercises"
+                            "/hamstringsexercises"
                           )
                         }
                         className="hamstringsIcon"
@@ -182,7 +182,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/glutesexercises"
+                            "/glutesexercises"
                           )
                         }
                         className="glutesIcon"
@@ -193,7 +193,7 @@ export default function Practise() {
                       <button
                         onClick={() =>
                           handleMuscleClick(
-                            "/Graduation-Project/gastrocnemiusexercises"
+                            "/gastrocnemiusexercises"
                           )
                         }
                         className="gastrocnemiusIcon"

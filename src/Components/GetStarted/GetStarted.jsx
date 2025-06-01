@@ -17,7 +17,7 @@ export default function GetStarted() {
                 </div>
                 <p className="pb-2">Flexzone is a gym in tj=he centre of progue.Come join us and start getting closer to your dream body.</p>
                     <div className="geStartedBtn text-center my-5 ">
-                    <Link to={"/Graduation-Project/login"}><button>Get Started <i className="fa-solid fa-arrow-right-long ms-1"></i></button></Link>
+                    <Link to={"/login"}><button>Get Started <i className="fa-solid fa-arrow-right-long ms-1"></i></button></Link>
                     </div>
                   <div className="d-flex justify-content-evenly align-items-center getStretedTexts">
                    <span>Meta Gym </span>

@@ -19,10 +19,10 @@ export default function Members() {
   const handleBasicPlanClick = () => {
     if (hasValidID && userId) {
       // If already has valid ID, go back to practise
-      navigate("/Graduation-Project/practise");
+      navigate("/practise");
     } else {
       // Go to ID verification with return path
-      navigate("/Graduation-Project/id", {
+      navigate("/id", {
         state: {
           returnPath: location.state?.returnPath,
         },
@@ -65,7 +65,7 @@ export default function Members() {
               <div className="plan-box-two p-4 shadow rounded">
                 <p className="text-white">{t("MembersPremiumParagraph")}</p>
                 <button
-                  onClick={() => navigate("/Graduation-Project/coming-soon")}
+                  onClick={() => navigate("/coming-soon")}
                   className="btn btn-warning btn-lg"
                 >
                   {t("MembersPremiumButton")}

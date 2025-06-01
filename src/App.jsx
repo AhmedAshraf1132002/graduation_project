@@ -53,7 +53,7 @@ function App() {
   const router = createBrowserRouter([
     {
       // RouterProvider hwa ms2ol 3n el routing w hwa ely gwah el layout ely gwaha kol el components
-      path: "/Graduation-Project",
+      path: "/",
       element: <Layout />,
       children: [
         { index: true, element: <ProtectedRoute> <Home /> </ProtectedRoute> },

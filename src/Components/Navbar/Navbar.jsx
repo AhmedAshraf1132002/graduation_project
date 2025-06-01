@@ -87,7 +87,7 @@ function SignOut()
 {
   setUserToken("");
   localStorage.removeItem("token");
-  navigate("/Graduation-Project/login");
+  navigate("/login");
 }
 
  const { i18n , t } = useTranslation();
@@ -112,7 +112,7 @@ function SignOut()
         
          <Link
           className="navbar-brand d-flex align-items-center text-white"
-          to="/Graduation-Project"
+          to="/"
         >
           <img
           
@@ -145,7 +145,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project"
+                to="/"
               >
                {t("Home")}
 
@@ -154,7 +154,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/about"
+                to="/about"
               >
                 {t("About Us")}
               </NavLink>
@@ -162,7 +162,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/ourgyms"
+                to="/ourgyms"
               >
                 {t("OurGyms")}
               </NavLink>
@@ -170,7 +170,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/practise"
+                to="/practise"
               >
                 {t("Practise")}
               </NavLink>
@@ -178,7 +178,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/contact"
+                to="/contact"
               >
                {t("Contact")}
               </NavLink>
@@ -211,7 +211,7 @@ function SignOut()
             <li className="nav-item">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/members"
+                to="/members"
               >
                 {t("Members")}
               </NavLink>
@@ -223,7 +223,7 @@ function SignOut()
             <li className="nav-item ms-5">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/login"
+                to="/login"
               >
                 {t("Login")}
               </NavLink>
@@ -231,7 +231,7 @@ function SignOut()
             <li className="nav-item ">
               <NavLink
                 className="nav-link text-white fw-bold"
-                to="/Graduation-Project/signup"
+                to="/signup"
               >
                 {t("Register")}
               </NavLink>

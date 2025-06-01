@@ -8,7 +8,7 @@ const {userToken} = useContext(AuthContext);
 
   return (
     <>
-      {!userToken ? children : <Navigate to={"/Graduation-Project"}/>}
+      {!userToken ? children : <Navigate to={"/"}/>}
     </>
   )
 }

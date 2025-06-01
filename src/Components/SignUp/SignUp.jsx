@@ -38,7 +38,7 @@ async function onSubmit(values) {
     setIsLoading(false);
     setSuccessMsg("Account created successfully!");
     setTimeout(() => {
-    navigate("/Graduation-Project/verify-otp", {
+    navigate("/verify-otp", {
     state: { 
       email: values.email,      // pass email
       username: values.username // pass username or whatever is needed by your API for OTP

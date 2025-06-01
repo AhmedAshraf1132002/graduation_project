@@ -206,7 +206,7 @@ export default function Login() {
 
   useEffect(() => {
     if (userToken) {
-      navigate("/Graduation-Project");
+      navigate("/");
     }
   }, [userToken, navigate]);
 
@@ -253,7 +253,7 @@ export default function Login() {
       });
 
       // Store the target path if it exists
-      const targetPath = location.state?.from?.pathname || "/Graduation-Project";
+      const targetPath = location.state?.from?.pathname || "/";
       navigate(targetPath);
     } catch (err) {
       if (err.response?.status === 401) {
@@ -366,7 +366,7 @@ export default function Login() {
                     <button className="mt-4 fw-bolder SignUpBtn" type="button">
                       <Link
                         className="text-decoration-none text-black"
-                        to={"/Graduation-Project/signup"}
+                        to={"/signup"}
                       >
                         Register
                       </Link>

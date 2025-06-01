@@ -244,7 +244,7 @@ export default function VerifyOtp() {
         setSuccessMsg("OTP verified successfully!");
 
         setTimeout(() => {
-          navigate("/Graduation-Project/login");
+          navigate("/login");
         }, 1000);
       } catch (error) {
         setIsLoading(false);

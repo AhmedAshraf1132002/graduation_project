@@ -112,7 +112,7 @@ export default function Chest() {
                   src={UpperChest_3}
                   alt="UpperChest_logo"
                 />
-                <button onClick={() => navigate("/Graduation-Project/incline-dumbbell-bench-press")} className="text-center">
+                <button onClick={() => navigate("/incline-dumbbell-bench-press")} className="text-center">
                   Incline-Dumbbell-Bench-Press
                 </button>
               </div>

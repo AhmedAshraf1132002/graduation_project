@@ -16,7 +16,7 @@ export default function Id() {
     if (hasValidID) {
       // If already has valid ID, go to the return path
       const returnPath =
-        location.state?.returnPath || "/Graduation-Project/practise";
+        location.state?.returnPath || "/practise";
       navigate(returnPath);
     }
   }, [navigate, location]);
@@ -41,7 +41,7 @@ export default function Id() {
     try {
       const token = localStorage.getItem("access_token");
       if (!token) {
-        navigate("/Graduation-Project/login");
+        navigate("/login");
         return;
       }
 
@@ -62,7 +62,7 @@ export default function Id() {
         localStorage.setItem("idType", res.data.id_type);
         // Navigate to the return path
         const returnPath =
-          location.state?.returnPath || "/Graduation-Project/practise";
+          location.state?.returnPath || "/practise";
         navigate(returnPath);
       } else {
         setError("Invalid ID. Please try again.");
@@ -77,7 +77,7 @@ export default function Id() {
         localStorage.removeItem("hasValidID");
         localStorage.removeItem("idType");
         setError("Session expired. Please log in again.");
-        navigate("/Graduation-Project/login");
+        navigate("/login");
       }
       // else if (err.response?.data?.detail) {
       //   setError(err.response.data.detail);
