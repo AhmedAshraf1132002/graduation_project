@@ -13,39 +13,13 @@ export default function Home() {
       </Helmet>
 
       <section>
-        {/* <div className="Home position-relative min-vh-100 d-flex align-items-center justify-content-center text-white">
-          
-          <div className="layer position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-
-          <div className="container mb-5 position-relative z-1  ">
-            <div className="Caption text-center">
-              
-              <div className="homePhoto mx-auto" style={{ maxWidth: "400px" }}>
-                <img
-                  className="img-fluid w-100"
-                  src={HomeLogo}
-                  alt="Home-Logo"
-                />
-              </div>
-
-              <h1 className="title display-4 fw-bold ">{t("ScanTitle")}</h1>
-
-              <button className="btn btn-light mt-3">
-                {t("QrButton")}{" "}
-                <i className="fa-solid fa-qrcode text-dark ms-2"></i>
-              </button>
-
-              
-            </div>
-          </div>
-        </div> */}
 
         <div className="Home position-relative min-vh-100 d-flex align-items-center justify-content-center text-white">
           {/* 🔁 Background Video */}
-          <video className="background-video" autoPlay loop muted playsInline>
+          {/* <video className="background-video" autoPlay loop muted playsInline>
             <source src={HomeVideo} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
 
           {/* Dark Overlay */}
           <div className="layer position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>

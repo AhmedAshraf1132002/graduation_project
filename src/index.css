@@ -40,20 +40,77 @@ li a {
   margin: 0 20px;
   font-size: 17px;
 }
+/* =================NotFound============ */
+.notfound-dark {
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.notfound-dark .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* =================LoadingScreen============ */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  z-index: 9999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading-screen h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #444;
+  border-top: 6px solid #4caf50; /* bright green */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 /*============Home==========*/
 
-/* .Home {
-  background-image: url(assets/Images/home.png);
+.Home {
+  background-image: url(assets/Images/Home05.png);
   background-position: center;
   background-size: cover;
   height: 100vh;
   position: relative;
   overflow: auto;
   animation: fadeZoom 1.5s ease-in-out forwards;
-} */
+}
 
-.background-video {
+/* .background-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,7 +118,7 @@ li a {
   height: 100%;
   object-fit: cover;
   z-index: -2;
-}
+} */
 
 /* Caption */
 .Home .Caption {
@@ -484,6 +541,25 @@ li a {
   }
 }
 
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this class */
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}
+
+
+
 /*===========================latissimusDorsi======================*/
 
 .latissimusDorsi {
@@ -540,7 +616,7 @@ li a {
 .latissimusDorsi h2 {
   text-align: center;
   font-weight: bold;
-  color: #ff7eb9;
+  color: #0072ff;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: 30px;
 }
@@ -559,9 +635,26 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
 }
+.latissimusDorsi button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.latissimusDorsi button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .latissimusDorsi p strong,
 .latissimusDorsi p em {
-  color: #ff7eb9;
+  color: #0072ff;
 }
 
 .latissimusDorsi p:hover {
@@ -680,6 +773,23 @@ li a {
   max-width: 900px;
   margin: 20px auto;
   transition: background-color 0.3s ease;
+}
+.shoulderMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: 0;
+}
+.shoulderMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .shoulderMuscle p strong {
   color: #007bff;
@@ -803,6 +913,23 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
 }
+.tricepsMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.tricepsMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .tricepsMuscle p strong {
   color: #007bff;
 }
@@ -924,6 +1051,24 @@ li a {
   max-width: 900px;
   margin: 20px auto;
   transition: background-color 0.3s ease;
+}
+
+.bicepsMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.bicepsMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .bicepsMuscle p strong {
   color: #007bff;
@@ -1047,6 +1192,23 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
 }
+.quadricepsMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.quadricepsMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .quadricepsMuscle p strong {
   color: #007bff;
 }
@@ -1169,6 +1331,23 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
 }
+.glutesMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.glutesMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .glutesMuscle p strong {
   color: #007bff;
 }
@@ -1201,6 +1380,405 @@ li a {
 /* Optional entry animation with media query */
 @media (prefers-reduced-motion: no-preference) {
   .glutesMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================TrapeziusMuscle======================*/
+
+.trapeziusMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.trapeziusMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.trapeziusMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.trapeziusMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.trapeziusMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trapeziusMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.trapeziusMuscle h1,
+.trapeziusMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.trapeziusMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.trapeziusMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.trapeziusMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.trapeziusMuscle p strong {
+  color: #007bff;
+}
+
+.trapeziusMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .trapeziusMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .trapeziusMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .trapeziusMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .trapeziusMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/*===========================GastrocnemiusMuscle======================*/
+
+.gastrocnemiusMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.gastrocnemiusMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.gastrocnemiusMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.gastrocnemiusMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.gastrocnemiusMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gastrocnemiusMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.gastrocnemiusMuscle h1,
+.gastrocnemiusMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.gastrocnemiusMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.gastrocnemiusMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.gastrocnemiusMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.gastrocnemiusMuscle p strong {
+  color: #007bff;
+}
+
+.gastrocnemiusMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .gastrocnemiusMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .gastrocnemiusMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .gastrocnemiusMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .gastrocnemiusMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .gastrocnemiusMuscle .video {
+    animation: fadeInZoom 1s ease-in-out;
+  }
+
+  @keyframes fadeInZoom {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/*===========================HamstringsMuscle======================*/
+
+.hamstringsMuscle {
+  background-image: url("assets/Images/outlet.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.hamstringsMuscle .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 1;
+}
+
+.hamstringsMuscle .container {
+  max-width: 1500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep row wrap for responsive stacking */
+.hamstringsMuscle .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Video style */
+.hamstringsMuscle .video {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamstringsMuscle .video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Headings */
+.hamstringsMuscle h1,
+.hamstringsMuscle h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Paragraph info section */
+.hamstringsMuscle p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+.hamstringsMuscle button {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.hamstringsMuscle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.hamstringsMuscle p strong {
+  color: #007bff;
+}
+
+.hamstringsMuscle p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hamstringsMuscle .video {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .hamstringsMuscle p {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .hamstringsMuscle h1 {
+    font-size: 1.8rem;
+  }
+
+  .hamstringsMuscle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional entry animation with media query */
+@media (prefers-reduced-motion: no-preference) {
+  .hamstringsMuscle .video {
     animation: fadeInZoom 1s ease-in-out;
   }
 
@@ -1291,8 +1869,8 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
 }
-.chestMuscle button{
-    font-size: 1.1rem;
+.chestMuscle button {
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #f0f0f0;
   background-color: rgba(255, 255, 255, 0.05);
@@ -1304,7 +1882,6 @@ li a {
   margin: 20px auto;
   transition: background-color 0.3s ease;
   border: none;
-  
 }
 .chestMuscle button:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -2050,10 +2627,13 @@ li a {
 /* =============================incline-dumbbell-section======================== */
 
 .incline-dumbbell-section {
-  min-height: 100vh;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+ min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
   background-size: cover;
-  padding: 20px;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 }
 
 .custom-card {
@@ -2062,10 +2642,165 @@ li a {
   backdrop-filter: blur(10px);
   width: 100%;
   max-width: 500px;
-  
 }
 
 .custom-card video {
   max-width: 100%;
   height: auto;
+}
+
+/* =============================Flat-dumbbell-section======================== */
+
+.flat-dumbbell-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* =============================dumbbell-curl-flat-section======================== */
+.dumbbell-curl-flat-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* =============================barbell-curls-biceps-section======================== */
+.barbell-curls-biceps-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* =============================cable-triceps-kickbacks-section======================== */
+.cable-triceps-kickbacks-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+/* =============================cable-triceps-pull-down-section======================== */
+.cable-triceps-pull-down-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* =============================latpull-down-flat-section======================== */
+
+.latpull-down-flat-section {
+  min-height: 100vh;
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+/* =============================dumbbell-lateral-raise-section======================== */
+.dumbbell-lateral-raise-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* =============================leg-extension-section======================== */
+.leg-extension-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================deadlift-section ==========================*/
+.deadlift-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================Standing-Calf-Raise-Assisted-section ==========================*/
+.standing-calf-raise-assisted-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================dumbbell-walking-lunges-section ==========================*/
+.dumbbell-walking-lunges-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================ rear-delt-machine-section ==========================*/
+.rear-delt-machine-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================ exercise-leg-Press-section ==========================*/
+.exercise-leg-Press-section {
+  min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================ flat-bench-press-section ==========================*/
+.flat-bench-press-section{
+   min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+/* ================================ dumbbell-shrug-flat-section ==========================*/
+.dumbbell-shrug-flat-section {
+     min-height: 100vh;
+  background-image: url(assets/Images/Home01.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 }

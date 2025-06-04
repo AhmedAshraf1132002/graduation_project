@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserIdContext } from "../../Contexts/UserIdContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 export default function Id() {
   const { setUserId } = useContext(UserIdContext);
@@ -46,7 +47,7 @@ export default function Id() {
       }
 
       const res = await axios.post(
-        "https://d151-102-191-71-165.ngrok-free.app/api/v1/gym-ids/verify",
+        "https://qr-gym-production-d503.up.railway.app/api/v1/gym-ids/verify",
         { access_id: inputId },
         {
           headers: {
@@ -92,6 +93,11 @@ export default function Id() {
 
   return (
     <>
+    <Helmet>
+      <title>
+        User Id
+      </title>
+    </Helmet>
       <div className="idInputSection text-white d-flex justify-content-center align-items-center">
         <div className="layer"></div>
         <div className="container text-center d-flex flex-column justify-content-center align-content-center">

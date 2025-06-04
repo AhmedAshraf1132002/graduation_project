@@ -1,10 +1,20 @@
 import React from "react";
-import latissimusdorsi_1 from "/src/assets/Videos/Lat_DorsiEx/latissimusdorsi_1.mp4";
-import cover from "/src/assets/Images/cover.png";
+import LatPulldownFlat from "/src/assets/Images/LatissimusPhotos/LatPulldownFlat.png";
+import LowCableBack from "/src/assets/Images/LatissimusPhotos/LowCableBack.png";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 export default function LatissimusDorsi() {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <>
-      <div className="latissimusDorsi">
+    <Helmet>
+      <title>
+        Latissimusdorsi Exercises
+      </title>
+    </Helmet>
+      {/* <div className="latissimusDorsi">
         <div className="layer"></div>
 
         <div className="container pt-5">
@@ -81,6 +91,59 @@ export default function LatissimusDorsi() {
             movements, making it a cornerstone in both athletic performance and
             daily physical activities.
           </p>
+        </div>
+      </div> */}
+
+      <div className="latissimusDorsi">
+        <div className="layer"></div>
+        <div className="container pt-5">
+          <h1 className="my-5 text-center fw-bolder">
+            {t("LatissimusDorsiTitle")}
+          </h1>
+
+          <div className="row justify-content-center">
+            <div className="col-lg-4 col-md-4 mb-4 d-flex justify-content-center">
+              <div className="content text-center">
+                <div className="logo">
+                  <img
+                    className="w-100 h-75 rounded-5 "
+                    src={LatPulldownFlat}
+                    alt="LatPulldownFlat_logo"
+                  />
+                  <button
+                    onClick={() => navigate("/latpull-down-flat")}
+                    className="text-center"
+                  >
+                    {t("Latpull-Down-Flat")}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4 mb-4 d-flex justify-content-center">
+              <div className="content text-center">
+                <div className="logo">
+                  <img
+                    className="w-100 h-75 rounded-5"
+                    src={LowCableBack}
+                    alt="LowCableBack_logo"
+                  />
+                  <button
+                    // onClick={() => navigate("/latpull-down-flat")}
+                    className="text-center"
+                  >
+                    {t("Low-Cable-Back")}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 className="text-center my-5 fw-bold">
+              {t("InformationMuscle")}
+            </h2>
+
+            <p className="text-center">
+             {t("LatissimusDorsiParagraph")}
+            </p>
+          </div>
         </div>
       </div>
     </>

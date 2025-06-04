@@ -1,8 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
@@ -12,7 +14,7 @@ export default function Contact() {
       <div className="contact">
         <div className="layer"></div>
         <div className="contactTitle my-5">
-          <h2 className="text-white">Contact</h2>
+          <h2 className="text-white">{t("Contact")}</h2>
         </div>
         <div className="container text-black p-4">
           <div className="row">

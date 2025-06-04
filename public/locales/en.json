@@ -10,7 +10,6 @@
   "Register": "Register",
   "SignOut": "SignOut",
   "QrCode": "QrCode",
-
   "ScanTitle": "Scan For Your Muscles",
   "QrButton": "Qr code..",
 
@@ -27,7 +26,58 @@
   "MembersBasicParagraph" : "Our Basic Plan is ideal for those just starting their fitness journey. It includes access to the gym during regular hours, use of all cardio and weight training equipment, and one complimentary orientation session with a personal trainer. Stay motivated and build consistency at your own pace, all while enjoying a clean, supportive workout environment.",
   "MembersPremiumParagraph" : "The Premium Plan offers everything in the Basic Plan and more. Enjoy unlimited access to all gym facilities, group fitness classes (yoga, spinning, HIIT), advanced training zones, and weekly personal training sessions. Plus, benefit from nutrition guidance and priority support. This plan is perfect for those who are serious about achieving their fitness goals faster and more effectively.",
   "MembersBasicButton" :  "Basic Plan",
-  "MembersPremiumButton" :  "Premium Plan"
+  "MembersPremiumButton" :  "Premium Plan",
+  "ShoulderParagraph" : "The shoulder muscles, primarily made up of theanterior deltoid, lateral deltoid, andposterior deltoid, play a key role in upper body mobility and strength. These muscles enable arm rotation, lifting, and stabilization across a wide range of motion. Common exercises like shoulder presses, lateral raises, and rear delt flys are essential to strengthen and develop these muscles.",
+  "ChestParagraph" : "The chest muscles, primarily made up of the pectoralis major and pectoralis minor, play a key role in upper body strength and movement. The pectoralis major, a large, fan-shaped muscle, enables pushing and lifting, while the pectoralis minor stabilizes the scapula and aids in breathing. Common exercises like push-ups, bench presses, and chest flys are essential to strengthen and develop these muscles.",
+  "TricepsParagraph" : "The triceps muscles, primarily made up of thelong head, lateral head, andmedial head, play a key role in upper arm strength and extension. The triceps are responsible for straightening the elbow and supporting pushing movements in daily tasks and workouts. Common exercises like dips, pushdowns, and close-grip bench presses are essential to strengthen and develop these muscles",
+  "BicepsParagraph" : "The biceps muscles, primarily made up of thebiceps brachii and brachialis, play a key role in upper arm strength and movement. The biceps brachii, with its two heads, enables elbow flexion and forearm rotation, while the brachialis lies underneath and adds power to the lift. Common exercises like curls, chin-ups, and rows are essential to strengthen and develop these muscles.",
+  "LatissimusDorsiParagraph" : "The latissimus dorsi, commonly known as thelats, is a large, flat muscle that spans the mid to lower back and plays a key role in upper body strength and movement. It enables actions like shoulder extension, adduction, and internal rotation, essential for pulling motions. Common exercises like pull-ups, lat pulldowns, and rows are important to strengthen and develop this muscle.",
+  "QuadricepsParagraph" : "The quadriceps muscles, primarily made up of therectus femoris, vastus lateralis,vastus medialis, and vastus intermedius, play a key role in knee extension and leg movement. The rectus femoris also assists with hip flexion, making the quads essential for walking, running, and jumping. Common exercises like squats, leg presses, and lunges are vital to strengthen and develop these muscles.",
+  "HamstringsParagraph" : "The hamstring muscles, primarily made up of thebiceps femoris, semitendinosus, andsemimembranosus, play a vital role in lower body movement and stability. These muscles enable knee flexion and hip extension, making them essential for walking, running, and jumping. Common exercises like leg curls, deadlifts, and lunges are important to strengthen and protect the hamstrings from injury.",
+  "GlutesParagraph" : "The glute muscles, primarily made up of thegluteus maximus, gluteus medius, andgluteus minimus, play a key role in lower body strength and movement. The gluteus maximus, the largest muscle, powers hip extension and posture, while the gluteus medius and minimus support balance and stabilize the pelvis. Common exercises like squats, hip thrusts, and lunges are essential to strengthen and develop these muscles.",
+  "TrapeziusParagraph" : "The trapezius muscle, primarily made up of the upper, middle, and lower fibers, plays a key role in upper back and neck movement and stability. These muscle fibers enable shoulder elevation, retraction, and depression, supporting a wide range of shoulder and arm motions. Common exercises like shrugs, upright rows, and reverse flys are essential to strengthen and develop the trapezius muscle.",
+  "GastrocnemiusParagraph" : "The gastrocnemius muscle, primarily made up of the medial and lateral heads, plays a key role in lower leg power and mobility. This muscle enables plantar flexion of the foot and assists in knee flexion, making it essential for movements like walking, running, and jumping. Common exercises like calf raises, jump rope, and sprinting are essential to strengthen and develop the gastrocnemius muscle.",
+  "InformationMuscle" : "🧠 Information About the Muscle",
+  "SoulderTitle" : "💥 Build That Shoulder Strength 💥",
+  "ChestUpperTitle" : "💥 Build That Upper Chest Strength 💥",
+  "ChestLowerTitle" : " Build That Lower Chest Strength 💥",
+  "TricepsTitle" : "💥 Build That Triceps Strength 💥",
+   "BicepsTitle" : "💥 Build That Biceps Strength 💥",
+  "LatissimusDorsiTitle" : "💥 Build That Latissimus Dorsi Strength 💥",
+  "TrapeziusTitle" : "💥 Build That Trapezius Strength 💥",
+  "QuadricepsTitle" : "💥 Build That Quadriceps Strength 💥",
+  "HamstringsTitle" : "💥 Build That Hamstrings Strength 💥",
+  "GlutesTitle" : "💥 Build That Glutes Strength 💥",
+  "GastrocnemiusTitle" : "💥 Build That Gastrocnemius Strength 💥",
+  "Dumbbell-Lateral-Raise" : "Dumbbell-Lateral-Raise",
+  "Incline-Dumbbell-Bench-Press" : "Incline-Dumbbell-Bench-Press",
+  "Incline-Bench-Press" : "Incline-Bench-Press",
+  "Flat-Dumbbell-Bench-Press" : "Flat-Dumbbell-Bench-Press",
+  "Flat-Bench Press" : "Flat-Bench Press",
+  "Cable-Triceps-Kickbacks" : "Cable-Triceps-Kickbacks",
+  "Cable-Triceps-Pull-Down" : "Cable-Triceps-Pull-Down",
+  "Dumbbell-Curl-Flat" : "Dumbbell-Curl-Flat",
+  "Barbell-Curls-Biceps" : "Barbell-Curls-Biceps",
+  "Low-Cable-Back" :  "Low-Cable-Back",
+  "Latpull-Down-Flat" : "Latpull-Down-Flat",
+  "Dumbbell-Shrug-Flat" : "Dumbbell-Shrug-Flat",
+  "Barbell-Shoulder-Shrug" : "Barbell-Shoulder-Shrug",
+  "Leg-Extension" : "Leg-Extension",
+  "Deadlift" : "deadlift",
+  "Standing-Calf-Raises-Barbell" : "Standing-Calf-Raises-Barbell",
+  "Standing-Calf-Raise-Assisted" : "Standing-Calf-Raise-Assisted",
+  "ExerciseLegPress" : "Leg-Press",
+  "Dumbbell-Walking-Lunges" : "Dumbbell-Walking-Lunges",
+  "Rear-Delt-Machine" : "Rear-Delt-Machine"
+  
+
+
+
+
+
+
+
+
                     
                     
                                 

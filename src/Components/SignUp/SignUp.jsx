@@ -30,7 +30,7 @@ async function onSubmit(values) {
 
   try {
     const { data } = await axios.post(
-      "https://d151-102-191-71-165.ngrok-free.app/api/v1/users/signup",
+      "https://qr-gym-production-d503.up.railway.app/api/v1/users/signup",
       payload,
       { headers: { "Content-Type": "application/json" } }
     );
@@ -72,7 +72,7 @@ const { handleSubmit , values , handleChange , errors , touched , handleBlur} = 
     username : Yup.string().required("Name is Required").min(3 , "Name length must be more than 3").max(20 , "Name length must be less than 20"),
     email : Yup.string().required("Email is Required").email("Enter Valid Email"),
     // phone_number : Yup.string().required("Phone number is required").matches(/^01[0-2,5]{1}[0-9]{8}$/, "Enter a valid Egyptian phone number"),
-    date_of_birth : Yup.date().required("Date of Birth is required"),
+    date_of_birth : Yup.date().required("Date of Birth is required").max(new Date(new Date().setFullYear(new Date().getFullYear() - 18)), "You must be at least 18 years old"),
     password : Yup.string().required("Password is Required").matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/ , "Minimum eight characters, at least one letter, one number and one special character"),
     confirm_password : Yup.string().required("Confirm Password is Required").oneOf([Yup.ref("password")] , "Password and confirm_password must be matched"),
     

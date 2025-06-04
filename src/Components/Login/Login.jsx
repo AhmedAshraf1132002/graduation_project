@@ -196,6 +196,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { Helmet } from "react-helmet-async";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -203,6 +204,7 @@ export default function Login() {
   const navigate = useNavigate();
   const { userToken, setUserToken } = useContext(AuthContext);
   const location = useLocation();
+
 
   useEffect(() => {
     if (userToken) {
@@ -233,7 +235,7 @@ export default function Login() {
       formData.append("password", values.password);
 
       const { data } = await axios.post(
-        "https://d151-102-191-71-165.ngrok-free.app/api/v1/users/token",
+        "https://qr-gym-production-d503.up.railway.app/api/v1/users/token",
         formData,
         {
           headers: {
@@ -253,8 +255,13 @@ export default function Login() {
       });
 
       // Store the target path if it exists
-      const targetPath = location.state?.from?.pathname || "/";
+
+        // ✅ Add delay before navigating to let LoadingScreen appear
+    const targetPath = location.state?.from?.pathname || "/";
+    setTimeout(() => {
       navigate(targetPath);
+    }, 5000); // 1.5 seconds delay to show LoadingScreen
+
     } catch (err) {
       if (err.response?.status === 401) {
         setErrorMsg("Invalid username or password");
@@ -281,6 +288,11 @@ export default function Login() {
 
   const { handleSubmit, values, handleChange, errors, touched, handleBlur } =
     formik;
+
+  if (isLoading) {
+  return <LoadingScreen />;
+}
+
 
   return (
     <>

@@ -21,12 +21,12 @@ import { UserIdContext } from "../../Contexts/UserIdContext";
 export default function Practise() {
   const navigate = useNavigate();
   const [selectedGender, setSelectedGender] = useState(null);
-  const { userId , targetPath } = useContext(UserIdContext);
+  const { userId } = useContext(UserIdContext);
 
   const { t } = useTranslation();
 
   const handleMuscleClick = (path) => {
-    if (!userId && targetPath) {
+    if (!userId) {
       // If no valid ID, go to members first
       navigate("/members", {
         state: { returnPath: path },
@@ -46,7 +46,7 @@ export default function Practise() {
       <section>
         <div className="practise vh-100 d-flex flex-column justify-content-center align-items-center">
           <div className="layer"></div>
-          <div className="container m d-flex flex-column justify-content-center align-items-center">
+          <div className="container m d-flex flex-column justify-content-center align-items-center  animate-fadeInUp">
             <h2 className="text-white title">{t("Exercises")}</h2>
             <div className="row">
               <div className="col-md-6">
@@ -81,7 +81,7 @@ export default function Practise() {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12">
-                    <div className="iconsOfMuscles d-flex justify-content-center align-items-center my-5 gap-5">
+                    <div className="iconsOfMuscles animate-fadeInUp d-flex justify-content-center align-items-center my-5 gap-5">
                       <button
                         onClick={() =>
                           handleMuscleClick(

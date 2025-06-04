@@ -224,7 +224,7 @@ export default function VerifyOtp() {
 
       try {
         const response = await axios.post(
-          "https://d151-102-191-71-165.ngrok-free.app/api/v1/users/verify-otp",
+          "https://qr-gym-production-d503.up.railway.app/api/v1/users/verify-otp",
           { 
             username, 
             otp_code: values.otp_code 
@@ -264,7 +264,7 @@ export default function VerifyOtp() {
 
     try {
       await axios.post(
-        "https://d151-102-191-71-165.ngrok-free.app/api/v1/users/resend-otp",
+        "https://qr-gym-production-d503.up.railway.app/api/v1/users/resend-otp",
         { email },
         { headers: { "Content-Type": "application/json" } }
       );

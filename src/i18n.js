@@ -14,7 +14,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: '/Graduation-Project/locales/{{lng}}.json', // ✅ Full path with Vite base
+      loadPath: "/locales/{{lng}}.json", // This works both locally and on GitHub Pages
     },
   });
 

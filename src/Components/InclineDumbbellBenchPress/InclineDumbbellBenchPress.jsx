@@ -1,8 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import cover from "/src/assets/Images/cover.png";
 import Chest_5 from "/src/assets/Videos/ChestEx/chest_5.mp4";
 
 export default function InclineDumbbellBenchPress() {
   return (
+   <>
+    <Helmet>
+      <title>
+        Incline-Dumbbell-Bench-Press
+      </title>
+    </Helmet>
+  
     <div
       className="incline-dumbbell-section d-flex justify-content-center align-items-center"
     >
@@ -21,5 +29,6 @@ export default function InclineDumbbellBenchPress() {
         </video>
       </div>
     </div>
+     </>
   );
 }

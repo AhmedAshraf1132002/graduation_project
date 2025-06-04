@@ -1,12 +1,23 @@
 import React from "react";
-import cover from "/src/assets/Images/cover.png";
-import Quadriceps_1 from "/src/assets/Videos/QuadricepsEx/quadriceps_1.mp4";
-import Quadriceps_2 from "/src/assets/Videos/QuadricepsEx/quadriceps_2.mp4";
+
+import Quadriceps_1 from "/src/assets/Images/QuadricepsPhotos/leg-extension.png";
+import Quadriceps_2 from "/src/assets/Images/QuadricepsPhotos/leg-press.png";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 export default function Quadriceps() {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <>
-      <div className="quadricepsMuscle">
+    <Helmet>
+      <title>
+        Quadriceps Exercises
+      </title>
+    </Helmet>
+      {/* <div className="quadricepsMuscle">
         <div className="layer"></div>
         <div className="container pt-5">
           <h1 className="my-5 text-center fw-bolder">
@@ -77,6 +88,59 @@ export default function Quadriceps() {
             push-ups, bench presses, and chest flys are essential to strengthen
             and develop these muscles.
           </p>
+        </div>
+      </div> */}
+      <div className="quadricepsMuscle">
+        <div className="layer"></div>
+        <div className="container pt-5">
+          <h1 className="my-5 text-center fw-bolder">
+            {t("QuadricepsTitle")}
+          </h1>
+
+          <div className="row justify-content-center">
+            <div className="col-lg-4 col-md-4 mb-4 d-flex justify-content-center">
+              <div className="content text-center">
+                <div className="logo">
+                  <img
+                    className="w-100 h-75 rounded-5 "
+                    src={Quadriceps_1}
+                    alt="Quadriceps_1_logo"
+                  />
+                  <button
+                    onClick={() => navigate("/leg-extension")}
+                    className="text-center"
+                  >
+                    {t("Leg-Extension")}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-4 mb-4 d-flex justify-content-center">
+                    <div className="content text-center">
+                      <div className="logo">
+                        <img
+                          className="w-100 h-75 rounded-5 "
+                          src={Quadriceps_2}
+                          alt="Quadriceps_2_logo"
+                        />
+                        <button
+                          onClick={() => navigate("/exercise-leg-press")}
+                          className="text-center"
+                        >
+                          {t("ExerciseLegPress")}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+            <h2 className="text-center my-5 fw-bold">
+              {t("InformationMuscle")}
+            </h2>
+
+            <p className="text-center">
+             {t("QuadricepsParagraph")}
+            </p>
+          </div>
         </div>
       </div>
     </>

@@ -1,8 +1,13 @@
 import React from 'react'
-
+import { Helmet } from 'react-helmet-async'
 export default function ComingSoon() {
   return (
     <>
+    <Helmet>
+      <title>
+        Coming Soon
+      </title>
+    </Helmet>
       <div className="coming-soon d-flex align-items-center justify-content-center text-white text-center">
       <div className='container'>
         <div className='row'>
