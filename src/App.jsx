@@ -37,7 +37,6 @@ import InclineDumbbellBenchPress from "./Components/InclineDumbbellBenchPress/In
 import FlatDumbbellBenchPress from "./Components/FlatDumbbellBenchPress/FlatDumbbellBenchPress";
 import DumbbellCurlFlat from "./Components/DumbbellCurlFlat/DumbbellCurlFlat";
 import BarbellCurlsBiceps from "./Components/BarbellCurlsBiceps/BarbellCurlsBiceps";
-import CableTricepsKickbacks from "./Components/CableTricepsKickbacks/CableTricepsKickbacks.JSX";
 import CableTricepsPullDown from "./Components/CableTricepsPullDown/CableTricepsPullDown";
 import LatPulldownFlat from "./Components/LatPulldownFlat/LatPulldownFlat";
 import DumbbellLateralRaise from "./Components/DumbbellLateralRaise/DumbbellLateralRaise";
@@ -49,6 +48,7 @@ import RearDeltMachine from "./Components/RearDeltMachine/RearDeltMachine";
 import ExerciseLegPress from "./Components/ExerciseLegPress/ExerciseLegPress";
 import DumbbellShrugFlat from "./Components/DumbbellShrugFlat/DumbbellShrugFlat";
 import FlatBenchPress from "./Components/FlatBenchPress/FlatBenchPress";
+import CableTricepsKickbacks from "./Components/CableTricepsKickbacks/CableTricepsKickbacks";
 
 function App() {
 
