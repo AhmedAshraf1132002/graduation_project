@@ -48,7 +48,8 @@ import ExerciseLegPress from "./Components/ExerciseLegPress/ExerciseLegPress";
 import DumbbellShrugFlat from "./Components/DumbbellShrugFlat/DumbbellShrugFlat";
 import FlatBenchPress from "./Components/FlatBenchPress/FlatBenchPress";
 import CableTricepsKickbacks from "./Components/CableTricepsKickbacks/CableTricepsKickbacks";
-import Deadlift from '../Components/DeadLift/Deadlift'
+import Deadlift from 'src/Components/DeadLift/Deadlift.jsx'
+
 
 function App() {
   const { i18n } = useTranslation();
