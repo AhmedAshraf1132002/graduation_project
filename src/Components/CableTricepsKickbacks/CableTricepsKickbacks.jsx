@@ -1,4 +1,4 @@
-import React from "react";
+
 import cover from "/src/assets/Images/cover.png";
 import triceps_1 from "/src/assets/Videos/TricepsEx/triceps_2.mp4";
 import { Helmet } from "react-helmet-async";
