@@ -41,7 +41,6 @@ import CableTricepsPullDown from "./Components/CableTricepsPullDown/CableTriceps
 import LatPulldownFlat from "./Components/LatPulldownFlat/LatPulldownFlat";
 import DumbbellLateralRaise from "./Components/DumbbellLateralRaise/DumbbellLateralRaise";
 import LegExtension from "./Components/LegExtension/LegExtension";
-import Deadlift from "./Components/DeadLift/deadlift";
 import StandingCalfRaiseAssisted from "./Components/StandingCalfRaiseAssisted/StandingCalfRaiseAssisted";
 import DumbbellWalkingLunges from "./Components/DumbbellWalkingLunges/DumbbellWalkingLunges";
 import RearDeltMachine from "./Components/RearDeltMachine/RearDeltMachine";
@@ -49,9 +48,9 @@ import ExerciseLegPress from "./Components/ExerciseLegPress/ExerciseLegPress";
 import DumbbellShrugFlat from "./Components/DumbbellShrugFlat/DumbbellShrugFlat";
 import FlatBenchPress from "./Components/FlatBenchPress/FlatBenchPress";
 import CableTricepsKickbacks from "./Components/CableTricepsKickbacks/CableTricepsKickbacks";
+import Deadlift from '../Components/DeadLift/Deadlift'
 
 function App() {
-
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -69,44 +68,83 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <ProtectedRoute> <Home/> </ProtectedRoute> },
+
         { path: "about", element: <ProtectedRoute> <AboutMetaGym />  </ProtectedRoute>  },
+
         { path: "home", element: <ProtectedRoute> <Home/>  </ProtectedRoute>  },
+
         { path: "ourgyms", element: <ProtectedRoute> <OurGyms /> </ProtectedRoute> },
+
         { path: "practise", element: <ProtectedRoute> <Practise /> </ProtectedRoute> },
+
         { path: "chestexercises", element:  <ProtectedRoute>  <Chest/>  </ProtectedRoute> },
+
         { path: "flat-bench-press", element:  <ProtectedRoute>  <FlatBenchPress/>  </ProtectedRoute> },
+
         { path: "incline-dumbbell-bench-press", element:   <ProtectedRoute> <InclineDumbbellBenchPress/> </ProtectedRoute>  },
+
         { path: "flat-dumbbell-bench-press", element:   <ProtectedRoute> <FlatDumbbellBenchPress/> </ProtectedRoute>  },
+
         { path: "dumbbell-curl-flat", element:   <ProtectedRoute> <DumbbellCurlFlat/> </ProtectedRoute>  },
+
         { path: "barbell-curls-biceps", element:   <ProtectedRoute> <BarbellCurlsBiceps/> </ProtectedRoute>  },
+
         { path: "cable-triceps-kickbacks", element:   <ProtectedRoute> <CableTricepsKickbacks/> </ProtectedRoute>  },
+
         { path: "cable-triceps-pull-down", element:   <ProtectedRoute> <CableTricepsPullDown/>  </ProtectedRoute> },
+
         { path: "latpull-down-flat", element:   <ProtectedRoute> <LatPulldownFlat/> </ProtectedRoute>  },
+
         { path: "dumbbell-lateral-raise", element:   <ProtectedRoute> <DumbbellLateralRaise/> </ProtectedRoute>  },
+
         { path: "leg-extension", element:   <ProtectedRoute> <LegExtension/> </ProtectedRoute>   },
+
         { path: "standing-calf-raise-assisted", element:   <ProtectedRoute> <StandingCalfRaiseAssisted/> </ProtectedRoute>   },
+
         { path: "deadlift", element:   <ProtectedRoute> <Deadlift/> </ProtectedRoute>   },
+
         { path: "rear-delt-machine", element:   <ProtectedRoute> <RearDeltMachine/> </ProtectedRoute>   },
+
         { path: "dumbbell-walking-lunges", element:   <ProtectedRoute> <DumbbellWalkingLunges/> </ProtectedRoute>   },
+
         { path: "exercise-leg-press", element:   <ProtectedRoute> <ExerciseLegPress/> </ProtectedRoute>   },
+
         { path: "shouldersexercises", element:  <ProtectedRoute> <Shoulder/> </ProtectedRoute>    },
+
         { path: "tricepsexercises", element:   <ProtectedRoute> <Triceps/> </ProtectedRoute>   },
+
         { path: "bicepsexercises", element:   <ProtectedRoute> <Biceps/>  </ProtectedRoute> },
+
         { path: "gastrocnemiusexercises", element:  <ProtectedRoute> <Gastrocnemius/> </ProtectedRoute>},
+
         { path: "quadricepsexercises", element:   <ProtectedRoute>  <Quadriceps/></ProtectedRoute> },
+
         { path: "hamstringsexercises", element:  <ProtectedRoute> <Hamstrings/> </ProtectedRoute>},
+
         { path: "glutesexercises", element:  <ProtectedRoute> <Glutes/> </ProtectedRoute>},
+
         { path: "latissimusdorsiexercises", element:   <ProtectedRoute> <LatissimusDorsi/> </ProtectedRoute> },
+
         { path: "trapeziusexercises", element:  <ProtectedRoute> <Trapezius/> </ProtectedRoute>},
+
         { path: "dumbbell-Shrug-Flat", element:  <ProtectedRoute> <DumbbellShrugFlat/> </ProtectedRoute>},
+
         { path: "contact", element: <ProtectedRoute> <Contact /> </ProtectedRoute> },
+
         { path: "id", element: <ProtectedRoute> <Id/> </ProtectedRoute> },
+
         { path: "members", element:  <ProtectedRoute> <Members /> </ProtectedRoute>  },
+
         { path: "coming-soon", element:  <ProtectedRoute> <ComingSoon/> </ProtectedRoute>  },
+
         { path: "getstarted", element:  <ProtectAuthRoutes> <GetStarted /> </ProtectAuthRoutes>  },
+
         { path: "signup", element: <ProtectAuthRoutes> <SignUp /> </ProtectAuthRoutes> },
+
         { path: "login", element: <ProtectAuthRoutes> <Login /> </ProtectAuthRoutes> },
+
         { path: "verify-otp", element: <ProtectAuthRoutes> <VerifyEmailOTP /> </ProtectAuthRoutes> },
+
         { path: "*", element: <NotFound /> },
       ],
     },
