@@ -2,7 +2,7 @@ import React from 'react'
 import deadlift from "/src/assets/Videos/deadlift.mp4";
 import cover from "/src/assets/Images/cover.png";
 import { Helmet } from 'react-helmet-async';
-export default function Deadlift() {
+export default function DeadLift() {
   return (
     <>
     <Helmet>

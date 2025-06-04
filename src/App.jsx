@@ -48,7 +48,8 @@ import ExerciseLegPress from "./Components/ExerciseLegPress/ExerciseLegPress";
 import DumbbellShrugFlat from "./Components/DumbbellShrugFlat/DumbbellShrugFlat";
 import FlatBenchPress from "./Components/FlatBenchPress/FlatBenchPress";
 import CableTricepsKickbacks from "./Components/CableTricepsKickbacks/CableTricepsKickbacks";
-import Deadlift from 'src/Components/DeadLift/Deadlift.jsx'
+import DeadLift from "./Components/DeadLift/Deadlift";
+
 
 
 function App() {
@@ -102,7 +103,7 @@ function App() {
 
         { path: "standing-calf-raise-assisted", element:   <ProtectedRoute> <StandingCalfRaiseAssisted/> </ProtectedRoute>   },
 
-        { path: "deadlift", element:   <ProtectedRoute> <Deadlift/> </ProtectedRoute>   },
+        { path: "deadlift", element:   <ProtectedRoute> <DeadLift/> </ProtectedRoute>   },
 
         { path: "rear-delt-machine", element:   <ProtectedRoute> <RearDeltMachine/> </ProtectedRoute>   },
 
